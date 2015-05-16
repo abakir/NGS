@@ -1,0 +1,650 @@
+sku,name,type
+2,Transport,
+10001,Smoked salmon (frozen),Sea Food
+101001,Coconut oil (organic) - for cooking,Oil
+101002,Coconut oil large (organic) - for cooking,Oil
+111001,Apple and mango juice (organic),Beverages
+111002,Dark chocolate with green tea and mango (organic),Snacks
+111003,Dragon fruit juice (organic),Beverages
+111004,Milk chocolate (organic),Snacks
+111005,Red grape juice (organic),Beverages
+111006,White grape juice (organic),Beverages
+111007,Dark chocolate with cranberry ( organic ) - 70% cacao,Chocolate
+111008,Dark chocolate with mint ( organic ),Chocolate
+121001,Cow milk (chemical free) - frozen,Milk
+131001,Whole meal flour,Baking products
+141001,Asparagus (chemical free),Vegetables
+141002,Baby corn (chemical free),Vegetables
+141003,Colored bell pepper (Chemical free),Vegetables
+141004,Green beans ( chemical free ),Vegetables
+141005,Green beans (Chemical free),Vegetables
+141006,Lime (Chemical free),Vegetables
+141007,Red onion (Chemical free),Vegetables
+141008,Spring onion (Chemical free),Vegetables
+141009,Sweet potatoes (Chemical free),Vegetables
+151001,Beef cubes (chemical free) - frozen,Beef
+151002,Beef escalope (chemical free) - frozen,Beef
+151003,Beef fillet (chemical free) - frozen,Beef
+151004,Beef fillet cubes (chemical free) - frozen,Beef
+151005,Beef liver ( Chemical free ) - frozen,Beef
+151006,Beef mince - no fat (chemical free) - frozen,Beef
+151007,Beef mince (chemical free) - frozen,Beef
+151008,Beef shanks ( Chemical free ) - frozen,Beef
+151009,Beef strips (chemical free) - frozen,Beef
+151010,Hamburger (chemical free) - frozen,Beef
+151011,Rib eye steak ( Chemical free ) - frozen,Beef
+151012,Top side steak (chemical free) - frozen,Beef
+151013,Veal cutlets (chemical free) - frozen,Veal
+151014,Veal escalope (chemical free) - frozenfrozen,Veal
+151015,Veal liver (chemical free) - frozen,Veal
+151016,Veal Picatta (chemical free) - frozen,Veal
+161001,Almond milk ( Original ),Non-dairy milk
+161002,Oat milk ( Original ),Non-dairy milk
+161003,Rice milk (original),Non-dairy milk
+161004,Soy milk ( light ),Non-dairy milk
+161005,Soy milk (bio),Non-dairy milk
+161006,Soya milk ( Original ),Non-dairy milk
+161007,Soya milk ( special for coffee),Non-dairy milk
+161008,Soya milk with banana,Non-dairy milk
+161009,Soya milk with chocolate ( organic ),Non-dairy milk
+161010,Soya milk with red fruits small,Non-dairy milk
+161011,Soya milk with vanilla,Non-dairy milk
+171001,Cookies with wheat germ,Snacks
+171002,Wheat germ miracle,Food supplements
+181001,Baking soda (pure),Baking products
+181002,Soy milk (organic) - unsweetened,Non-dairy milk
+181003,Soy milk (vanilla),Non-dairy milk
+181004,Tortillas (whole grain),Bread
+191001,Alphabet Pasta ( gluten free ) - Italian,Pasta
+191002,Chocolate paste with nuts ( gluten free ) - Bio,Snacks
+191003,Chocolate paste with nuts and carob ( gluten free ) - Bio,Snacks
+191004,Cour Di Riso Cacao gluten free,Snacks
+191005,Dame al cacao biscuits ( gluten free ),Snacks
+191006,Penne ( gluten free ) - Italian,Pasta
+191007,Rice and almond milk ( organic ),Non-dairy milk
+191008,Rice milk extra calcium ( organic ),Non-dairy milk
+191009,Rice milk with cacao ( organic ),Non-dairy milk
+191010,Rotini ( gluten free ) - Italian,Pasta
+191011,Spaghetti ( gluten free ) - Italian,Pasta
+20001,Appricot,Fruits
+20002,Avocados (imported),Fruits
+20003,Baby onions,Vegetables
+20004,Baby potatoes,Vegetables
+20005,Bananas (imported),Fruits
+20006,Cherries,Fruits
+20007,Clementina,Fruits
+20008,Eshta khadra,Fruits
+20009,Fresh ginger (imported),Vegetables
+20010,Green apples (French) - imported,Fruits
+20011,Guava,Fruits
+20012,Kaka Fruit,Fruits
+20013,Kiwi,Fruits
+20014,Melon,Fruits
+20015,Mushroom,Vegetables
+20016,Nectarine,Fruits
+20017,Oranges,Fruits
+20018,Papaya,Fruits
+20019,Pears (American) - imported,Fruits
+20020,Pink grapfruit,Fruits
+20021,Pomegranate,Fruits
+20022,Red apples (American),Fruits
+20023,Red grapes (imported),Fruits
+20024,Red pears (american) - imported,Fruits
+20025,Red plums (imported),Fruits
+20027,Sweet onions,Vegetables
+20028,Sweet oranges,Fruits
+20029,Sweet peach,Fruits
+20030,Sweet pineapples,Fruits
+20031,Yellow Grapefruit,Fruits
+201001,Flax seed bread (organic),Bread
+201002,Multigrain crackers,Snacks
+201003,Organic crackers,Snacks
+201004,Original crackers,Crackers
+201005,Pumpernickel bread,Bread
+201006,Roland wild rice,Rice
+201007,Rye crackers,Snacks
+201008,Sunflower seed bread (organic),Bread
+201009,Traditional crackers,Snacks
+201010,Whole grain crackers with coriander,Snacks
+201011,Whole grain crackers with garlic,Snacks
+201012,Wholegrains crackers,Snacks
+201013,Whole rye bread (organic),Bread
+2015,Test 1,Accessories
+211001,Black Plate T9/57,Packaging
+211002,Punnet 500,Packaging
+211003,Black Plate T19/44,Packaging
+211004,Punnet 250,Packaging
+221001,Bench press oats with apple and cinnamon ( with whey protein ),Cereal
+221002,Chia seeds (organic),Seeds
+221003,Goji berries,Dried fruits
+221004,Granola with fruits and seeds ( gluten free ),Cereal
+221005,Muesli with branberry and strawberries ( organic ),Cereal
+221006,"Muesli with fruits, nuts and seeds ( organic )",Cereal
+221007,Muesli with goji berries and cranberries ( gluten free ),Cereal
+221008,"Muesli with mixed berries, oat flakes, and seeds (organic)",Cereal
+221009,"Muesli with quinoa, amaranth, apple, seeds and nuts ( gluten free )",Cereal
+221010,Muesli with seeds and nuts - made from scottish oats ( gluten free ),Cereal
+221011,Natural hot chocolate with bannana and maca ( organic ),Beverages
+221012,Oats with apple and cinnamon ( organic ),Cereal
+221013,Oats with maca and cocoa (organic) ? super food,Cereal
+221014,Oats with spirulina and barley grass (organic) ? super food,Cereal
+221015,Pure oats ( gluten free ),Cereal
+221016,Raw milled linseeds (flax seed meal ) - organic,Seeds
+221017,Raw Peruvian cacao ( organic ),Baking products
+221018,Skinny oats with berries and green tea extract ( for weight loss ),Cereal
+231001,Quinoa (Chemical free) - Local,Grains
+241001,Apricot jam (natural),Jam
+241002,Cherry jam (natural),Sweeteners
+241003,Date jam with almonds & cloves (natural),Jam
+241004,Ginger jam (natural),Jam
+241005,Green olives (natural),pickles
+241006,Mango jam (natural),Jam
+241007,Olive oil (extra virgin),Oil
+241008,Olive oil with herbs (extra virgin),Oil
+241009,Pomegranate jam (natural),Jam
+241010,Pumpkin jam (natural),Jam
+241011,Stawberry jam (natural),Jam
+241013,Sun dried tomatoes (natural),pickles
+241014,Zucchini jam with pistachio & mastic (natural),Jam
+241015,Red carrot jam (natural),Jam
+241016,Gooseberry jam (natural ,Jam
+241017,Lareng jam (natural) ,Jam
+241018,Sun dried tomatoes with herbs (natural),Jam
+241019,Pumpkin jam white caramel (natural),Jam
+241020,Plum jam (natural),Jam
+241021,Raisins jam (natural),Jam
+241022,Guava jam (natural),Jam
+241023,Cherry tomatoes jam (natural),Jam
+241024,Calamntine jam (natural),Jam
+251001,Almond biscutis (Gluten free) - traces of gluten,Snacks
+251002,Banana bread (Gluten free) - traces of gluten,Snacks
+251003,Carrot cake (Gluten free) - traces of gluten,Snacks
+251004,Chocolate biscutis (Gluten free) - traces of gluten,Snacks
+251005,Ginger cake (Gluten free) - traces of gluten,Snacks
+251006,Ginger cookies (Gluten free) - traces of gluten,Snacks
+251007,Granola bars,Snacks
+251008,Orange cake (Gluten free) - traces of gluten,Snacks
+261001,Body butter with vanilla,Cosmetics
+261002,Body butter with white musk and brown sugar,Cosmetics
+261003,Body lotion with green tea & lemon grass,Cosmetics
+261004,Body massage Oil (lavander),Cosmetics
+261005,Body massage oil with red rose effect,Cosmetics
+261006,Body scrub with almond and oat,Cosmetics
+261007,Body scrub with coffee & vanilla (anti-cellulite),Cosmetics
+261008,body scrub with green tea & lemon grass,Cosmetics
+261009,Facial acne soap with ying yang oil,Cosmetics
+261010,Facial milkwith green tea & cucumber,Cosmetics
+261011,Facial mist & toner,Cosmetics
+261012,Facial mist & toner (normal and oily skin),Cosmetics
+261013,Facial mist (orange blossom),Cosmetics
+261014,Facial mud scrub (dry skin),Cosmetics
+261015,Facial serum for younger skin,Cosmetics
+261016,Facial soap with goat milk,Cosmetics
+261017,Hair conditioner with argan oil,Cosmetics
+261018,Hair serum (anti-frizz),Cosmetics
+261019,Hair serum (shine and split ends),Cosmetics
+261020,Moroccan mud facial scrub (for younger skin),Cosmetics
+261021,Oat meal soap,Cosmetics
+261022,Shampoo (dry hair),Cosmetics
+261023,Shampoo (oily hair),Cosmetics
+261024,Smelling Fresh Deodrant,Cosmetics
+261025,Soap scrub bar with water melon,Cosmetics
+261026,Sun screen with wheatgerm and coconut oil,Cosmetics
+271001,Hurom slow juicer,Home appliance
+281001,Almond milk ( organic ) 946ml,Non-dairy milk
+281002,Antiseptic cream with tea tree oil 118ml,Cosmetics
+281003,Baking soda 453g,Baking products
+281004,Basmati brown rice ( organic ) 907g,Rice
+281005,Bee pollen granules,Food supplements
+281006,Beet root powder,Food supplements
+281007,Brown rice flour ( Gluten free ),Baking products
+281008,Brown rice Penne ( American ) - gluten free - organic 340g,Pasta
+281009,Brown rice rotini ( American ) - gluten free - organic 284g,Pasta
+281010,Brown rice spaghetti ( American ) - gluten free - organic 284g,Pasta
+281011,Brownie mix ( gluten free ) 595g,Baking products
+281012,Chocolate cake mix (gluten free),Baking products
+281013,Chocolate chip cookie mix ( gluten free ),Baking products
+281014,Coconut flour,Baking products
+281015,Coconut oil ( Small glass jar ),Oil
+281016,Coconut palm Sugar 454g,Sweeteners
+281017,Conditioner with tea tree oil 473ml,Cosmetics
+281018,Cranberry juice powder,Food supplements
+281019,Extra virgin sesame oil ( organic ) 473ml,Oil
+281020,Flax milk original ( organic ),Non-dairy milk
+281021,Flax milk unsweetened ( organic ),Non-dairy milk
+281022,Flax milk vanilla ( organic ),Non-dairy milk
+281023,Flax oil,Oil
+281024,Homemade bread mix ( gluten free ) 453g,Baking products
+281025,Liquid soap with tea tree oil 226g,Cosmetics
+281026,Maca root powder,Food supplements
+281027,Marshmallow root powder,Food supplements
+281028,Milk thistle seed powder,Food supplements
+281029,Mouth wash with tea tree oil 354ml,Cosmetics
+281030,Oat milk ( organic ) 946ml,Non-dairy milk
+281031,Organic brown rice elbow pasta 340g,Pasta
+281032,pancake mix ( gluten free ) 623g,Baking products
+281033,Power mix powder pouch,Food supplements
+281034,Raw sunflower seed ( shelled ) 566g,Seeds
+281035,Rice chips ( Santa fe barbecue ),Snacks
+281036,Rice chips ( Sea salt ),Snacks
+281037,Sea salt ( potugese ) - fine grind 453g,Spices
+281038,Shampo with tea tree oil 473ml,Cosmetics
+281039,Short grain brown rice ( organic ) - eco farmed,Rice
+281040,Soy protein powder 369g,Food supplements
+281041,Spanish extra virgin olive oil ( organic ) 473g,Oil
+281042,St.john's wort powder,Beverages
+281043,Stevia,Sweeteners
+281044,Tea tree oil 30ml,Cosmetics
+281045,Turbinado sugar 881g,Sweeteners
+281046,Unsweetened almond milk,Non-dairy milk
+281047,Unsweetened soy milk ( Organic ) 946ml,Non-dairy milk
+281048,Vanilla cake mix ( gluten free ) 539g,Baking products
+281049,Weight loss powder,Beverages
+281050,Whitening tooth paste with tea tree oil,Cosmetics
+281051,Wild rice ( organic ) 227g,Rice
+281052,Apple cider vinegar ( organic ),Vinegar
+281053,Buckwheat ( hulled ) - organic 454g,Grains
+281054,Essiac tea,Herbs
+281055,Millet ( organic ) 454g,Grains
+281056,Quinoa ( white ) - organic 454g,Grains
+281058,MU 16 tea (strength and vitality) - George Oshoa,Herbal Drinks
+281059,Pumpkin seeds (hulled) - organic,Seeds
+281063,Bulgur (golden),Grains
+281065,Couscous (golden),Grains
+281067,Whey protein (pure),Food supplements
+281069,Quinoa flour (gluten free),Baking products
+281070,Rice Bran (gluten free),Food supplements
+281072,Nutritional Yeast (gluten free),Food supplements
+281073,Bread mix (heartly whole grain),Baking products
+281075,Mung beans,Grains
+281076,Steel cut oats,Cereal
+281077,Oat bran,Cereal
+281079,Pizza crust,Baking products
+281080,Spelt flour,Baking products
+281081,"Sorghum flour (white, sweet)",Baking products
+281082,Almond meal flour,Baking products
+281083,Amaranth,Grains
+281084,Coconut flour (organic),Baking products
+281085,Freekeh (cracked) - organic,Grains
+281086,Spirulina powder (organic),Food supplements
+281088,Agar Agar flakes (hand harvested) - wild,Food supplements
+281090,Manuka honey,Honey
+281091,Granola bars (dark Chocolate),Snacks
+281092,Granola bars (trail mix),Snacks
+281093,Granola bars (fruit mix),Snacks
+281094,Granola bars (blueberry),Snacks
+281095,Blue agave syrup (Raw) - organic,Sweeteners
+281096,Oreo - chocolate vanilla (gluten free),Snacks
+281097,Vanilla cream biscuits (gluten free),Snacks
+281098,Vanilla cookies (gluten free),Snacks
+281099,Caramel cookies (animal shaped) - gluten free,Snacks
+281101,Dried cranberry,Dried fruits
+281102,Maple syrup (organic),Sweeteners
+281103,Dulse flakes (organic),Food supplements
+281105,Tamari soy sauce (organic),Sauces
+281106,Shoyu soy sauce (organic),Sauces
+281107,Grean tea with rose hips & petals (organic),Herbal Drinks
+281108,Kukicha loose twig tea - Japanese (organic),Herbal Drinks
+281109,Wild rice cakes (organic) - gluten free,Snacks
+281110,Brown rice cakes (organic) - gluten free,Snacks
+281111,Brown rice cakes with flax and tamari (organc) - gluten free,Snacks
+281115,Banana chips,Dried fruits
+291001,Bee pollen dust ( Egyptian ) 300g,Food supplements
+291002,Black Seeds (Egyptian),Spices
+291003,Brown rice ( Egyptian ),Rice
+291004,Brown sugar 750g,Sweeteners
+291005,Flax Seeds ( Egyptian ) 250g,Seeds
+291006,Green tea 300g,Beverages
+291007,Herbal Filter,Home appliance
+291008,Herbal Tea Pot,Home appliance
+291009,Honey Spoon,Home appliance
+291010,Pollen Grains,Food supplements
+291011,Psyllium husk,Food supplements
+291012,Psyllium seeds 300g,Food supplements
+291013,Pumpkin Seeds 100g,Seeds
+30001,Green asparagus,Vegetables
+30002,Green asparagus (jumbo),Vegetables
+301001,Animal shaped biscuits ( Gluten free ),Snacks
+301002,Breadcrumbs (gluten free),Baking products
+301003,Breadsticks ( gluten free ),Snacks
+301004,Cioccolini ( gluten free ),Snacks
+301005,cocoa wafer cacao ( gluten free ),Snacks
+301006,Corn flakes ( gluten free ),Cereal
+301007,Digestive biscuits with chocolate ( gluten free ),Snacks
+301008,Disco Ciok ( gluten free ),Snacks
+301009,Fette croccanti ( gluten free ),Snacks
+301010,Flour & yeast mix ( gluten free ),Baking products
+301011,Fusilli ( gluten free ),Pasta
+301012,Honey biscuits ( gluten free ),Snacks
+301013,Marble cake ( Gluten free ),Snacks
+301014,Milly Gris and Ciocc,Snacks
+301015,Mini pasta ( Gluten free ),Pasta
+301016,Penne (gluten free ) - dr schar,Pasta
+301017,Salted biscuits ( gluten free ),Snacks
+301018,Spaghetti ( gluten free ) - dr schar,Pasta
+301019,Toast ( gluten free ),Bread
+301020,Toast bread flour ( Gluten free ),Baking products
+301021,Wafer with chocolate ( Gluten free ),Snacks
+301022,Mix patisserie (Gluten free),General
+311001,Chia seeds,Seeds
+311002,White quinoa (organic),Grains
+321001,Balady bread (whole grain),Bread
+321002,Shamsy bread (whole grain),Bread
+321003,Turkey,Poultry
+331001,"Goat, Sheep, and cow milk mixed Cheese",cheese
+331002,Sheep milk cheese,cheese
+341001,Baby black aubergene,Vegetables
+341002,Baby black Aubergine (Round),Vegetables
+341003,Cherry carrots,Vegetables
+341004,Baby spinach,Vegetables
+341005,Baby striped aubegene,Vegetables
+341006,Baby yellow zucchini,Vegetables
+341007,Broccoli,Vegetables
+341008,Broccoli Romanesco,Vegetables
+341009,Brussels sprouts,Vegetables
+341010,chives,Vegetables
+341011,Color beet,Vegetables
+341012,Colored lettuce,Vegetables
+341013,Colored tomato,Vegetables
+341014,Curly frise lettuce,Vegetables
+341015,Fennel,Herbs
+341016,Green asparagus,Vegetables
+341017,Green beans (french),Vegetables
+341018,Green Curly lettuce,Vegetables
+341019,Green iceberg lettuce,Vegetables
+341020,Italian basil,Herbs
+341021,Kale,Vegetables
+341022,Lemon grass,Herbs
+341023,Lolla bionda,Vegetables
+341024,Lolla rossa,Vegetables
+341025,Marjoram,Herbs
+341026,Mesclun,Vegetables
+341027,mustard leaves,Herbs
+341028,Oak leaf lettuce,Vegetables
+341029,Pak choi,Vegetables
+341030,Red asparagus,Vegetables
+341031,Red curly batavia,Vegetables
+341032,red iceberg lettuce,Vegetables
+341034,Red romaine,Vegetables
+341035,Roquette,Vegetables
+341036,Rosemary,Herbs
+341037,Ruby chard ( colored beets ),Vegetables
+341038,Sage,Herbs
+341039,Salad flowers,Vegetables
+341040,Seeds sprouts,Vegetables
+341041,silver beet,Vegetables
+341042,Sprouts,Vegetables
+341043,Sucrine lettuce,Vegetables
+341044,Tarragon,Herbs
+341045,Thyme,Herbs
+341046,Watercress,Vegetables
+341047,Zucchini flowers,Vegetables
+341051,Cherry tomato,Vegetables
+351001,Dried apple ( chemical free ),Dried fruits
+351002,Dried apricots ( chemical free ),Dried fruits
+351003,Dried banana (chemical free),Dried fruits
+351004,Dried bay leaf ( chemical free ),Herbs
+351005,Dried cherry (chemical free),Dried fruits
+351006,Dried dates ( chemical free ),Dried fruits
+351007,Dried figs ( Chemical free ),Dried fruits
+351009,Dried fruit mix ( chemical free ),Dried fruits
+351010,Dried grapfruit ( chemical free ),Dried fruits
+351011,Dried Kiwi (chemical free),Dried fruits
+351012,Dried mango (chemical free),Dried fruits
+351013,Dried Mushroom (chemical free),Vegetables
+351014,Dried pear ( Chemical free ),Dried fruits
+351016,Dried peppers (chemical free),Vegetables
+351017,Dried prunes (chemical free),Dried fruits
+351018,Dried soup mix (chemical free),Vegetables
+351019,Dried strawberris ( chemical free ),Dried fruits
+351020,Dried tomato (chemical free),Vegetables
+351021,Dried lemongrass (chemical free),Herbal Drinks
+351022,Dried nectarine (chemical free),organic dried fruits 
+351023,Dried peach (chemical free),organic dried fruits 
+351024,Raisins (chemical free),Dried fruits
+361001,Acai berry juice,Beverages
+361002,Blueberry juice,Beverages
+361003,cranberry juice,Beverages
+361004,Green tea blueberry juice,Beverages
+361005,Pomegranate juice,Beverages
+361006,Purple superberry juice,Beverages
+361007,Red Superberry juice,Beverages
+361008,White tea with peach,Beverages
+361009,Whole grain rice cakes (low fat)-lightly salted),Snacks
+361010,Whole grain rice cakes (organic) low fat - lightly salted,Snacks
+371001,Balady raw Honey,Honey
+371052,Strawberry,Fruits
+381001,Coconut oil (skin & hair),Cosmetics
+381002,Face and body silky cream with vanilla,Cosmetics
+381003,Shea butter soap,Cosmetics
+381004,Sugar and jojoba body scrub,Cosmetics
+381005,Sweet almond oil,Cosmetics
+381006,Sweet almond oil with lavender,Cosmetics
+391001,Bedouin lamb beit kalawi ( Chemical free ),Lamb
+391002,Bedouin lamb leg ( Chemical free ),Lamb
+40001,All purpose baking flour ( Gluten free ),Flour
+Allpurposebakingflour(glutenfree),All purpose baking flour (gluten free),General
+40002,Dried apricots 250g,Dried fruits
+40003,Dried blueberries 250g,Dried fruits
+40004,Dried cranberry 200g,Dried fruits
+40005,Dried Goji Berries,Dried fruits
+40006,Dried prune with pits 250g,Dried fruits
+40007,Dried turkish figs 250g,Dried fruits
+40008,Golden Flaxseeds,Grains
+40009,Golden raisins 250g,Dried fruits
+40010,Green coffee (natural weight loss),Beverages
+40011,Medjoul dates,Dried fruits
+40012,Mixed nuts,Nuts
+40013,Mixed nuts (trail mix),Nuts
+40014,Orange juice(natural),Beverages
+40015,Prune Juice (natural laxative),Beverages
+40016,Quinoa ( white ) - organic 454g,Grains
+40017,Raw almonds (shelled) 250g,Nuts
+40018,Raw cashew 250g,Nuts
+40019,Raw pecan 250g,Nuts
+40020,Raw pistachio 250g,Nuts
+40021,Raw walnut (shelled) 250g,Nuts
+40023,Quinoa pasta (penne) - gluten free,Pasta
+40024,Quinoa soup with vegetables (glten free),Grains
+40025,Quinoa soup with lentil,Grains
+40026,Quinoa - white (Peru),Grains
+40027,Quinoa - red (Peru),Grains
+40028,Quinoa - white (Bolivia),Grains
+40029,Quinoa - red (Bolivia),Grains
+401001,Multigrain bunns (4 small bunns),Bread
+401002,Olive oil (thyme infused),Oil
+401003,Rye bread (loaf),Bread
+401004,Scandinavian twisted baguette (tordu),Bread
+401005,Spelt & Rye crackers (cumin),Snacks
+401006,Spelt & Rye crackers (mixed seeds),Snacks
+401007,Spelt & Rye crackers (sunflower seeds),Snacks
+401008,Spelt bread (loaf),Bread
+411001,vacuum 20*30,Packaging
+411002,Vacuum 25*40,Packaging
+421001,Foot spray (natural),Cosmetics
+421002,Hair conditioning cream (natural),Cosmetics
+421003,Hair oil (natural),Cosmetics
+421004,Hair spray,Cosmetics
+421005,Shampoo (natural),Cosmetics
+421006,Soothing lotion,Cosmetics
+431001,Black olives (natural),pickles
+431002,Black Pepper,Spices
+431003,Black Pepper grinder,Spices
+431004,Cardamoms,Spices
+431005,Cayenne Pepper,Spices
+431006,Chilli flakes,Spices
+431007,Cloves,Spices
+431008,Cumin,Spices
+431009,Curry powder,Herbs and spices
+431010,Fireball with grinder,Spices
+431011,Garam Masala,Spices
+431012,Garlic powder,Herbs and spices
+431013,Low Sodium Salt,Spices
+431014,Meat Tenderiser,Spices
+431015,Mixed Herbs,Herbs
+431016,Mixed Spices,Spices
+431017,Nutmeg,Spices
+431018,Paprika,Spices
+431019,Pimento (All Spice),Spices
+431020,Rosemary,Herbs
+431021,Salad Seasoning,Herbs
+431022,Salt & Vinegar,Spices
+431023,Sea Salt grinder,Spices
+431024,Thyme,Herbs
+431025,Basil leaves,Herbs and spices
+431026,Beef masala,Spices
+431027,Black peppercorn,Spices
+431028,Chicken masala,Spices
+431029,Chilli flakes,Spices
+431030,Fish masala,Spices
+431031,Lemon pepper seasoning,Spices
+441001,Basmati rice ( White ),Rice
+441002,Berry mix ( frozen ),Fruits
+441003,Blackberries ( frozen ),Fruits
+441004,Blueberries ( frozen ),Fruits
+441005,Lingoberries ( frozen ) ( cranberry ),Fruits
+441006,Raspberries ( frozen ),Fruits
+451001,Salmon steak,Sea Food
+461001,Aubergene (Roumy) - Chemical free,Vegetables
+461002,Balady eggs ( chemical free ),Eggs
+461003,Caraway (chemical free ),Beverages
+461004,Cherry tomatoes ( chemical free ),Vegetables
+461005,Colored bell pepper ( Chemical free ),Vegetables
+461006,Cucumber (chemical free),Vegetables
+461007,Dutch fennel ( chemical free ),Herbs
+461008,Fennel ( chemical free ),Herbs
+461009,Garlic (chemical free),Vegetables
+461010,Green Onion ( chemical free ),Vegetables
+461011,Leek ( chemical free ),Vegetables
+461012,Lemon(chemical free),Vegetables
+461013,Lime ( chemical free ),Vegetables
+461014,Mango alfonse ( Chemical free ),Fruits
+461015,Mango aweys(chemical free),Fruits
+461016,Mango sedeek ( Chemical free ),Fruits
+461017,Mango zebdeya ( Chemical free ),Fruits
+461018,Marjoram ( chemical free ),Herbs
+461019,Molokheya (chemical free),Vegetables
+461020,Moringa ( chemical free ),Food supplements
+461021,Okra ( Chemical free ),Vegetables
+461022,Peanuts in shell (chemical free),Nuts
+461023,Potatoes (chemical free),Vegetables
+461024,Potatoes( chemical free),Vegetables
+461025,Red chilli pepper ( chemical free ),Vegetables
+461026,Red grapes - seedless(chemical free),Fruits
+461027,Spearmint ( chemical free ),Beverages
+461028,sweet potatoes(chemical free),Vegetables
+461029,Thyme ( chemical free ),Herbs
+461030,Tomato ( chemical free ),Vegetables
+461031,White grapes ( Chemical free ),Fruits
+461032,Yellow carrot ( chemical free ),Vegetables
+461033,Zucchini ( chemical free ),Vegetables
+471001,Emmental ( slices),cheese
+471002,Goat cheese (slices),cheese
+471003,Kerrygold red cheddar (slices),cheese
+471004,Kerrygold white cheddar ( slices),cheese
+471005,Light cheese (slices),cheese
+471006,Maasdam (slices),cheese
+471007,Mimolette ( slices),cheese
+481001,Secure 16,Accessories
+481002,Secure 24,Accessories
+491001,Forest honey ( spanish ),Honey
+50001,Bananas (chemical free),Fruits
+501001,Arugula(chemical free),Vegetables
+501002,baby potatoes (chemical free),Vegetables
+501003,Baby Spinach(chemical free),Vegetables
+501004,Balady eggs (chemical free),Eggs
+501005,Balady Whole Chicken(chemical free),Poultry
+501006,Beetroot(chemical free),Vegetables
+501007,Broccoli(chemical free),Vegetables
+501008,Celery Salt,Spices
+501009,Celery (chemical free),Herbs
+501010,Chinese radish (chemical free),Vegetables
+501011,Coriander ( chemical free ),Herbs
+501012,Coriander(chemical free),Herbs
+501013,Cucumber (chemical free),Vegetables
+501014,Dill (chemical free),Herbs
+501015,Duck(chemical free),Poultry
+501016,French parsley,Herbs
+501017,Green beans (chemical free),Vegetables
+501018,Green Pepper (chemical free),Vegetables
+501019,Iceberg Lettuce(chemical free),Vegetables
+501020,Kale (chemical free),Vegetables
+501021,Lemon Grass (chemical free),Beverages
+501022,Lolla Rossa Lettuce (chemical free),Vegetables
+501023,Marjoram (chemical free),Herbs
+501024,Mint (chemical free),Herbs
+501025,Molokhyia (chemical free),Vegetables
+501026,Morjaram (chemical free),Herbs
+501027,Oregano (chemical free),Herbs
+501028,Parsely(chemical free),Herbs
+501029,Red Cabbage(chemical free),Vegetables
+501030,Red Radish(chemical free),Vegetables
+501031,Red Swiss Chard(chemical free),Vegetables
+501032,Rosemary(chemical free),Herbs
+501033,Saris lettuce (chemical free),Vegetables
+501034,Spinach ( chemical free ),Vegetables
+501036,Sweet Basil(chemical free),Herbs
+501037,Swiss Chard(chemical free),Vegetables
+501038,Tomato (chemical free),Vegetables
+501039,Zucchini (chemical free),Vegetables
+501042,Lolla rosso lettuce,Fresh fruits and vegetables
+501043,Balady lettuce,Fresh vegetables
+501044,Ice berg lettuce,Fresh fruits and vegetables
+511001,Buzzy ( pain relief ),Kids products
+511002,Hydro fuel bottle,Home appliance
+511003,Lunch box ( large ),Home appliance
+511004,Lunch box ( regular ),Home appliance
+511005,Lunch box ( rubbish free ) - large,Home appliance
+511006,Lunch box ( rubbish free ) - regular,Home appliance
+511007,Sandwich box,Home appliance
+511008,Snack box ( mini ),Home appliance
+511009,Snack tubes ( double ),Home appliance
+511010,Snack tubes ( triple ),Home appliance
+511011,Stainless steel bottle,Home appliance
+511012,Tritan bottle ( with freeze stick inside ),Home appliance
+521001,Tofu,Grains
+531001,Chicken Breasts (chemical free),Poultry
+531002,Chicken Cutlets - Shishtawook (chemical free),Poultry
+531003,Chicken drumsticks (chemical free),Poultry
+531004,Chicken Liver (chemical free),Poultry
+531005,Whole Chicken (chemical free),Poultry
+541001,Honey soap,Cosmetics
+541002,Bentonite clay soap,Cosmetics
+541003,Coconut oil soap,Cosmetics
+541004,Natural deodorant (stick),Cosmetics
+541005,Shea butter balm (for hair),Cosmetics
+551001,Moringa leaves - dried ( organic ),Food supplements
+551002,Moringa powder (organic ),Beverages
+561001,Guiltless oatmeal cookie mix,Baking products
+561002,Wholesome pancake mix,Baking products
+571001,Sweet red oranges(for eating),Fresh fruits
+581001,Sweet red oranges(for juicing),Fruits
+60001,Apple and cinnamon herbal tea (organic),Beverages
+60002,Camomile and spearmint herbal tea (organic),Beverages
+60003,White tea with fennel and peppermint (organic),Beverages
+601001,Tulsi original (organic),Herbal Drinks
+601002,Tulsi Green tea (organic),General
+601003,Tulsi masala chia (organic),Herbal Drinks
+611001,Short grain brown rice ( egyption ),Gluten free baking
+62001,Quinoa (Chemical free) - Local,General
+682065,Red iceberg lettuce,Vegetables
+70001,Bolti fillet (chemical free),Sea Food
+702015,Dried figs ( chemical free ),Dried fruits
+80001,Chicken breasts 1kg,Poultry
+80002,Chicken cutlets (Shishtawook),Poultry
+80003,Chicken drumsticks,Poultry
+80004,Chicken liver,Poultry
+80005,Whole chicken 1kg,Poultry
+90001,Camel milk (frozen),Milk
+Babyonion,Baby onion ,General
+BlackPepper,Black Pepper,Spices
+Cairo,Cairo,General
+Cairoabove150LEorders,Cairo above 150 L.E orders,General
+ElSheroukMadinati,El Sherouk & Madinati,
+ElSheroukMadinatiabove200LE,El Sherouk & Madinati above 200 L.E,
+finegrindportugeseseasalt,Sea salt ( potugese ) - fine grind 453g,Spices
+106900,Quinoa ( white ) - organic,Grains
+291004,Brown sugar 750g 750g,Sweeteners
+SixthofOctober,Sixth of October,
+SixthofOctoberabove300LE,Sixth of October above 300 L.E,General
+Unsweetenedalmondmilk,Unsweetened almond milk,Non-dairy milk
