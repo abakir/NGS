@@ -3,14 +3,20 @@ import re
 
 location = 'C:\Users\saisree849\Documents\GitHub\NGS_Project\\6_demand_forecast_vend\\vend-item_count.csv'
 df = pd.read_csv(location)
-
-df1=df
 #names to upper
 for i in range(0, max(df.index)+1):
     df.loc[i, 'Product'] = df.loc[i, 'Product'].upper()
 
-#sort products and reset index
 df=df.sort('Product')
+df= df.reset_index().drop('index',1)
+lis=[]
+for i in range(0,max(df.index)+1):
+    if('ITEM COUNT'==df.loc[i,'Product']):
+        lis.append(i)
+
+df=df.drop(df.index[lis])
+        
+#sort products and reset index
 df= df.reset_index().drop('index',1)
 
 #Subsetting with reqd fields
@@ -29,7 +35,6 @@ for i in range(0,max(df1.index)+1):
     df1.loc[i, 'Product'] =df1.loc[i, 'Product'].replace(" ","")
     
 #remove unnecessary products
-import re
 lis=[]
 for i in range(0,max(df1.index)+1):
     if (re.search('L.E',df1.loc[i,'Product'])):
@@ -39,7 +44,6 @@ df1=df1.drop(df1.index[lis])
 #sort and reset index
 df1=df1.sort('Product')
 df1= df1.reset_index().drop('index',1)
-#df1.to_csv('C:\Users\saisree849\Desktop\\temp.csv')
 
 df2=df1
 
@@ -94,7 +98,6 @@ for i in range(0,max(df4.index)+1):
     for j in range(0,max(df3.index)+1):
         if (df4.loc[i,'Product']==df3.loc[j,'Product']):
             tot=tot+df3.iloc[j,37]
-            #print tot
             c.append(j)
         else:
             if(tot!=0):
@@ -102,7 +105,6 @@ for i in range(0,max(df4.index)+1):
             for k in c:
                 for l in range(1,37):
                     if(df3.iloc[k,l]!=0):
-                        #print df4.loc[i,'Product'], l, df3.iloc[k,l]
                         df4.iloc[i,l]=df3.iloc[k,l]
             tot=0
             c=[]
@@ -117,8 +119,6 @@ df5.to_csv('C:\Users\saisree849\Documents\GitHub\NGS_Project\\6_demand_forecast_
 
 
 #----------------Revenue--------------------------
-import pandas as pd
-import re
 
 location = 'C:\Users\saisree849\Documents\GitHub\NGS_Project\\6_demand_forecast_vend\\vend-total_revenue.csv'
 df = pd.read_csv(location)
@@ -158,30 +158,9 @@ df1=df1.drop(df1.index[lis])
 #sort and reset index
 df1=df1.sort('Product')
 df1= df1.reset_index().drop('index',1)
-#df1.to_csv('C:\Users\saisree849\Desktop\\temp.csv')
 
 df2=df1
 
-#get the row indices which have same product
-ls=[]
-for i in range(0,max(df1.index)):
-    if (df1.loc[i,'Product']==df1.loc[i+1,'Product']):
-        for j in range(1,36):
-            if ((df1.iloc[i,j]==0) & (df1.iloc[i+1,j]!=0)):
-                #df1.iloc[i,j]=df1.iloc[i+1,j]
-                ls.append(i+1)
-                ls.append(i)
-                
-            elif ((df1.iloc[i+1,j]==0) & (df1.iloc[i,j]!=0)):
-                #df1.iloc[i+1,j]=df1.iloc[i,j]
-                ls.append(i)
-                ls.append(i+1)
-                
-#remove redundancies in indices
-p=[]
-for i in ls:
-    if i not in p:
-        p.append(i)
         
 #get redundant products
 df3=df1.iloc[p]
