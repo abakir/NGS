@@ -39,6 +39,8 @@ lis=[]
 for i in range(0,max(df1.index)+1):
     if (re.search('L.E',df1.loc[i,'Product'])):
         lis.append(i)
+    if (re.search('CAIRO',df1.loc[i,'Product'])):
+        lis.append(i)
 df1=df1.drop(df1.index[lis])
 
 #sort and reset index
@@ -152,6 +154,8 @@ import re
 lis=[]
 for i in range(0,max(df1.index)+1):
     if (re.search('L.E',df1.loc[i,'Product'])):
+        lis.append(i)
+    if (re.search('CAIRO',df1.loc[i,'Product'])):
         lis.append(i)
 df1=df1.drop(df1.index[lis])
 

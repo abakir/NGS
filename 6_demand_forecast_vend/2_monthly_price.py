@@ -1,6 +1,4 @@
-from pandas import read_csv
 import pandas as pd
-import re
 
 location = 'C:\Users\saisree849\Documents\GitHub\NGS_Project\\6_demand_forecast_vend\\itemcount.csv'
 df = pd.read_csv(location)
