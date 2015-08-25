@@ -3,6 +3,7 @@ import pandas as pd
 location='C:\Users\saisree849\Documents\GitHub\NGS_Project\\6_demand_forecast_vend\\price.csv'
 df = pd.read_csv(location)
 
+#remove products whose revenue is 0
 df = df[df.Revenue != 0]
 df = df[pd.notnull(df['Revenue'])]
 df=df.sort('Product')
@@ -16,6 +17,7 @@ total=0
 for i in range(0, max(df3.index)+1):
     total+=df3.loc[i,'Revenue']
     
+#get products which make 80% sales
 temp=0
 for i in range(0, max(df3.index)+1):
     temp+=df3.loc[i,'Revenue']

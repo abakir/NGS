@@ -8,12 +8,13 @@ df1 = pd.read_csv(location)
 
 df2=df1
 
+#divide each revenue by item count
 for i in range(0,max(df.index)+1):
     for j in range(1,37):
         if(df.iloc[i,j] > 0):
             df2.iloc[i,j] = df1.iloc[i,j]/df.iloc[i,j]
             
-
+#get price from recent months
 for i in range(0,max(df2.index)+1):
     flag=0
     for j in range(1,37):

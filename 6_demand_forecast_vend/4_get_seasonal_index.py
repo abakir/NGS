@@ -5,6 +5,7 @@ df = pd.read_csv(location)
 location='C:\Users\saisree849\AppData\Roaming\Skype\My Skype Received Files\\vend-total_revenue-sales_summary-by-month-2.csv'
 df1 = pd.read_csv(location)
 
+#creating column names 
 col=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 ind = [0,1,2,3]
 
@@ -16,6 +17,7 @@ t14=0
 p12=0
 p13=0
 p14=0
+#adding all positive revenues
 for i in range(1,13):
     if(df1.iloc[0,i]>0):
         p12=p12+1
@@ -29,10 +31,12 @@ for i in range(25,37):
         p14=p14+1
         t14=t14+df1.iloc[0,i]
     
+#getting monthly average
 t12=t12/p12
 t13=t13/p13
 t14=t14/p14
 
+#creating seasonal index for each year
 for i in range(1,13):
     df2.iloc[0,i-1]=df1.iloc[0,i]/t12
 for i in range(13,25):
@@ -40,6 +44,7 @@ for i in range(13,25):
 for i in range(25,37):
     df2.iloc[2, i-25]=df1.iloc[0,i]/t14
     
+#getting average SI for each month
 for i in range(0,12):
     t=0
     p=0
