@@ -34,13 +34,57 @@ for i in range(0,max(df1.index)+1):
     df1.loc[i, 'Product'] =df1.loc[i, 'Product'].replace("'","")
     df1.loc[i, 'Product'] =df1.loc[i, 'Product'].replace("_","")
     df1.loc[i, 'Product'] =df1.loc[i, 'Product'].replace(" ","")
+
+#same products with different names
+for i in range(0, max(df1.index)+1):
+    if ('CHICKENBREASTS1KG' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'CHICKENBREAST'
+    elif ('AVOCADO' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'AVOCADOSIMPORTED'
+    elif ('AVOCADOESIMPORTED' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'AVOCADOSIMPORTED'
+    elif ('WHOLECHICKEN1KG' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'WHOLECHICKEN'
+    elif ('SALMONSTEAKFROZEN' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'SALMONSTEAK'
+    elif ('PREMIUMNORWEGIANSALMONSTEAK' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'SALMONSTEAK'
+    elif ('BALADYWHOLECHICKENCHEMICALFREEDEFAULT' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'BALADYWHOLECHICKENCHEMICALFREE'
+    elif ('BANANA' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'BANANASIMPORTED'
+    elif ('DUCKCHEMICALFREE' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'DUCK'
+    elif ('APPLECIDERVINEGARORGANIC473G' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'APPLECIDERVINEGARORGANIC'
+    elif ('ORGANICREDQUINOA454G' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'QUINOAREDPERU'
+    elif ('REDQUINOA' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'QUINOAREDPERU'
+    elif ('SPINACH' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'BABYSPINACHCHEMICALFREE'
+    elif ('PINEAPPLE' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'SWEETPINEAPPLES'
+    elif ('ALLPURPOSEBAKINGFLOURGLUTENFREE623G' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'ALLPURPOSEBAKINGFLOURGLUTENFREE'
+    elif ('BROWNRICEEGYPTIAN750G' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'BROWNRICEEGYPTIAN'
+    elif ('FRESHGINGER' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'FRESHGINGERIMPORTED'
+    elif ('GREENASPARAGUSDEFAULT' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'GREENASPARAGUS'
     
+        
 #remove unnecessary products
 lis=[]
 for i in range(0,max(df1.index)+1):
     if (re.search('L.E',df1.loc[i,'Product'])):
         lis.append(i)
     if (re.search('CAIRO',df1.loc[i,'Product'])):
+        lis.append(i)
+    if (re.search('SIXTHOFOCTOBER',df1.loc[i,'Product'])):
+        lis.append(i)
+    if (re.search('ELKATAMEYAFIFTHSETTLEMENT',df1.loc[i,'Product'])):
         lis.append(i)
 df1=df1.drop(df1.index[lis])
 
@@ -149,14 +193,57 @@ for i in range(0,max(df1.index)+1):
     df1.loc[i, 'Product'] =df1.loc[i, 'Product'].replace("'","")
     df1.loc[i, 'Product'] =df1.loc[i, 'Product'].replace("_","")
     df1.loc[i, 'Product'] =df1.loc[i, 'Product'].replace(" ","")
+
+#same products with different names
+for i in range(0, max(df1.index)+1):
+    if ('CHICKENBREASTS1KG' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'CHICKENBREAST'
+    elif ('AVOCADO' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'AVOCADOSIMPORTED'
+    elif ('AVOCADOESIMPORTED' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'AVOCADOSIMPORTED'
+    elif ('WHOLECHICKEN1KG' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'WHOLECHICKEN'
+    elif ('SALMONSTEAKFROZEN' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'SALMONSTEAK'
+    elif ('PREMIUMNORWEGIANSALMONSTEAK' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'SALMONSTEAK'
+    elif ('BALADYWHOLECHICKENCHEMICALFREEDEFAULT' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'BALADYWHOLECHICKENCHEMICALFREE'
+    elif ('BANANA' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'BANANASIMPORTED'
+    elif ('DUCKCHEMICALFREE' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'DUCK'
+    elif ('APPLECIDERVINEGARORGANIC473G' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'APPLECIDERVINEGARORGANIC'
+    elif ('ORGANICREDQUINOA454G' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'QUINOAREDPERU'
+    elif ('REDQUINOA' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'QUINOAREDPERU'
+    elif ('SPINACH' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'BABYSPINACHCHEMICALFREE'
+    elif ('PINEAPPLE' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'SWEETPINEAPPLES'
+    elif ('ALLPURPOSEBAKINGFLOURGLUTENFREE623G' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'ALLPURPOSEBAKINGFLOURGLUTENFREE'
+    elif ('BROWNRICEEGYPTIAN750G' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'BROWNRICEEGYPTIAN'
+    elif ('FRESHGINGER' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'FRESHGINGERIMPORTED'
+    elif ('GREENASPARAGUSDEFAULT' == df1.loc[i,'Product']):
+        df1.loc[i, 'Product'] = 'GREENASPARAGUS'
     
+     
 #remove unnecessary products
-import re
 lis=[]
 for i in range(0,max(df1.index)+1):
     if (re.search('L.E',df1.loc[i,'Product'])):
         lis.append(i)
     if (re.search('CAIRO',df1.loc[i,'Product'])):
+        lis.append(i)
+    if (re.search('SIXTHOFOCTOBER',df1.loc[i,'Product'])):
+        lis.append(i)
+    if (re.search('ELKATAMEYAFIFTHSETTLEMENT',df1.loc[i,'Product'])):
         lis.append(i)
 df1=df1.drop(df1.index[lis])
 
