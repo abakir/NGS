@@ -78,11 +78,7 @@ for i in range(0, max(df1.index)+1):
 #remove unnecessary products
 lis=[]
 for i in range(0,max(df1.index)+1):
-    if (re.search('L.E',df1.loc[i,'Product'])):
-        lis.append(i)
-    if (re.search('CAIRO',df1.loc[i,'Product'])):
-        lis.append(i)
-    if (re.search('SIXTHOFOCTOBER',df1.loc[i,'Product'])):
+    if (re.search('ABOVE',df1.loc[i,'Product'])):
         lis.append(i)
     if (re.search('ELKATAMEYAFIFTHSETTLEMENT',df1.loc[i,'Product'])):
         lis.append(i)
@@ -237,11 +233,7 @@ for i in range(0, max(df1.index)+1):
 #remove unnecessary products
 lis=[]
 for i in range(0,max(df1.index)+1):
-    if (re.search('L.E',df1.loc[i,'Product'])):
-        lis.append(i)
-    if (re.search('CAIRO',df1.loc[i,'Product'])):
-        lis.append(i)
-    if (re.search('SIXTHOFOCTOBER',df1.loc[i,'Product'])):
+    if (re.search('ABOVE',df1.loc[i,'Product'])):
         lis.append(i)
     if (re.search('ELKATAMEYAFIFTHSETTLEMENT',df1.loc[i,'Product'])):
         lis.append(i)
