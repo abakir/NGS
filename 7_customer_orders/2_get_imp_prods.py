@@ -57,4 +57,4 @@ for i in range(0,max(df1.index)+1):
             df2.loc[i,'Type']=df1.loc[i,'Type']
 df2= df2.reset_index().drop('index',1)
 
-df2.to_csv('C:\Users\saisree849\Documents\GitHub\NGS_Project\\7_customer_orders\\allimp.csv',Index=None, Header = False)
+df2.to_csv('C:\Users\saisree849\Documents\GitHub\NGS_Project\\7_customer_orders\\allimp.csv',index=None)
