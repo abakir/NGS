@@ -1,5 +1,5 @@
 import pandas as pd
-location = 'C:\Users\saisree849\Downloads\\vend-total_revenue-for-product_variant-by-month (1).csv'
+location = 'C:\Users\saisree849\Documents\GitHub\NGS_Project\\9_revenue_growth_rate\\vend-total_revenue-for-product_variant-by-month (1).csv'
 df = pd.read_csv(location)
 
 df=df[0:max(df.index)-4]
