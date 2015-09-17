@@ -17,6 +17,7 @@ for i in df.columns:
         if(p!=len(df.columns)):
             col.append(i)
 col.append('Average')
+col.append('Period')
                         
 df1=pd.DataFrame(columns=col)
 
@@ -46,8 +47,11 @@ for i in range(0,max(df.index)+1):
             break
     #TO get the total no of months        
     n=len(df.columns)-1-j
+    m=n**(-1)
     #df.iloc[i,len(df.columns)-1] is the total revnue from original table
-    df1.loc[i,'Average']=(df.iloc[i,len(df.columns)-1]-df.iloc[i,j])*100/(n*df.iloc[i,j])
+    y=df.iloc[i,len(df.columns)-1]/df.iloc[i,j]
+    df1.loc[i,'Average']=(pow(y,m)-1)*100
+    df1.loc[i,'Period'] = n
     
                             
 df1.to_csv("C:\Users\saisree849\Documents\GitHub\NGS_Project\\9_revenue_growth_rate\product_growth_rate.csv",index=False)
