@@ -39,12 +39,14 @@ for i in range(0,max(df.index)+1):
                 df1.iloc[i,j-1]=0
 
 for i in range(0,max(df.index)+1):
-    tot=0
     for j in range(1,len(df.columns)-1):
+        #To get the first non zero revenue month
         if(df.iloc[i,j]!=0):
             t=1
             break
-    n=len(df.columns)-2-j
+    #TO get the total no of months        
+    n=len(df.columns)-1-j
+    #df.iloc[i,len(df.columns)-1] is the total revnue from original table
     df1.loc[i,'Average']=(df.iloc[i,len(df.columns)-1]-df.iloc[i,j])*100/(n*df.iloc[i,j])
     
                             

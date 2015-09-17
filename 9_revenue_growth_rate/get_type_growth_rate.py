@@ -38,12 +38,11 @@ for i in range(0,max(df.index)+1):
                 df1.iloc[i,j-1]=0
                 
 for i in range(0,max(df.index)+1):
-    tot=0
     for j in range(1,len(df.columns)-1):
         if(df.iloc[i,j]!=0):
             t=1
             break
-    n=len(df.columns)-2-j
+    n=len(df.columns)-1-j
     df1.loc[i,'Average']=(df.iloc[i,len(df.columns)-1]-df.iloc[i,j])*100/(n*df.iloc[i,j])
             
 df1.to_csv("C:\Users\saisree849\Documents\GitHub\NGS_Project\\9_revenue_growth_rate\\type_growth_rate.csv",index=False)
