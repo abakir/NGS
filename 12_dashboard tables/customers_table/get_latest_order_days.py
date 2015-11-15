@@ -1,7 +1,7 @@
 import pandas as pd
 from datetime import datetime
 import time
-df = pd.read_csv('C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\customers_table\orders_export.csv')
+df = pd.read_csv('C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\data\orders_export.csv')
 
 def getDate(data):
     return pd.to_datetime(datetime.strptime(data[:10], '%Y-%m-%d')).date()

@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("C:\Users\saisree849\Documents\GitHub\NGS_Project\\10_order_frequency\orders_export.csv")
+df = pd.read_csv('C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\data\orders_export.csv')
 df1 = df
 df = df[[ 'Email', 'Lineitem quantity', 'Lineitem price']]
 df.columns = ['Email', 'Quantity', 'Price']
@@ -16,7 +16,7 @@ df = df.merge(df1, on = ['Email'], how = 'inner')
 df['Basket Value'] = df['Revenue'] / df['Orders']
 customer_value = df[['Email', 'Revenue', 'Basket Value']]
 
-customers = pd.read_csv('C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\customers_table\\customers_export.csv')
+customers = pd.read_csv('C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\data\\customers_export.csv')
 
 customers['Name'] = customers['First Name'] + " " + customers['Last Name']
 customers['Address'] = customers['Address1'] + " " + customers['Address2'] + " " + customers['City']
@@ -47,8 +47,10 @@ customer_segments = gather(raw_segments, 'Segment', 'Name', segment_names)
 customer_segments = customer_segments[customer_segments.Name.notnull()]
 
 # merge
-customer_info_with_segments = pd.merge(customer_value, customer_segments, on="Name")
+#customer_info_with_segments = pd.merge(customer_value, customer_segments, on="Name")
 
+customer_info_with_segments = customer_segments.merge(customer_value, on = ['Name'], how = 'outer')
 customer_info_with_segments = customer_info_with_segments[['Name', 'Revenue', 'Basket Value', 'Segment', 'Email', 'Address', 'Phone' ]]
+
 
 customer_info_with_segments.to_csv('C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\customers_table\customers_segments.csv', index=False)
