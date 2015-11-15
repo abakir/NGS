@@ -3,19 +3,25 @@ from datetime import datetime
 import re
 
 #read
-df = pd.read_csv("C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\bought_together\orders_export.csv")
+df = pd.read_csv("C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\data\orders_export.csv")
 
 #function to get month and year
 def convertDate(data):
     matchobj = re.match(r'(.*) (.*) (.*).*',data)
     data = matchobj.group(1)
     matchobj = re.match(r'(.*)-(.*)-(.*).*',data)
-    data = matchobj.group(1) + "-" + matchobj.group(2)
+    data = matchobj.group(1) + "-" + matchobj.group(2) + "-01"
     return data
 
 #function to get the number of repeated order no's
 def getUnique(data):
     return len(data) - len(set(data))
+    
+def combineProds(date1, name1, name2, count):
+    if(name1 < name2):
+        return date1 + "," + name1 + "," + name2 + "," +count
+    else:
+        return date1 + "," + name2 + "," + name1 + "," +count
 
 
 df = df[['Name', 'Lineitem name', 'Created at']] #subset required columns
@@ -71,13 +77,17 @@ for i in d:
 df1['Name'] = pd.Series(na)
 
 df1 = df1[df1.Product1 != df1.Product2]
-df1 = df1.reset_index().drop('index',1)
 
 df1['Count'] = df1.Name.apply(getUnique)
 df1 = df1[df1.Count != 0]
-df1 = df1.reset_index().drop('index',1)
+
+df1['newcol'] = df1.apply(lambda x: combineProds(str(x['Date']),x['Product1'], x['Product2'],str(x['Count'])), axis=1)
+df1 = df1.drop_duplicates('newcol').reset_index().drop('index',1)
 
 df1 = df1[['Date', 'Product1', 'Product2', 'Count']]
-df1['Date'] = df1.Date.apply(lambda x: pd.to_datetime(datetime.strptime(x, '%Y-%m')).date())
+df1['Date'] = df1.Date.apply(lambda x: pd.to_datetime(datetime.strptime(x, '%Y-%m-%d')).date())
 
-df1.to_csv("C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\\bought_together\pair_by_month.csv", index = False)
+df1 = df1.sort(['Count'], ascending = False)
+df1 = df1.reset_index().drop('index', 1)
+
+df1.to_csv("C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\\bought_together\pair_by_month.csv")
