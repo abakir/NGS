@@ -2,7 +2,7 @@ import pandas as pd
 from datetime import datetime
 import time
 import os
-df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\data\orders_export.csv')
+df = pd.read_csv('../data/orders_export.csv')
 
 def getDate(data):
     return pd.to_datetime(datetime.strptime(data[:10], '%Y-%m-%d')).date()

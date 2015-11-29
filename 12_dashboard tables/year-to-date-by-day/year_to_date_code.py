@@ -3,7 +3,7 @@ import re
 from datetime import datetime
 import os
 
-df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+"\data\\vend-total_revenue-sales_summary-by-day.csv")
+df = pd.read_csv("../data/vend-total_revenue-sales_summary-by-day.csv")
 
 def convertDate(data):
     matchobj = re.match(r'(.*) (.*) (.*) (.*).*',data)

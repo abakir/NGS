@@ -4,7 +4,7 @@ import re
 import os
 
 
-df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+"\data\orders_export.csv")
+df = pd.read_csv("../data/orders_export.csv")
 
 def convertDate(data):
     matchobj = re.match(r'(.*) (.*) (.*).*',data)
@@ -28,7 +28,7 @@ df2['Total orders'] = 1
 df5 = df5.groupby(['Email', 'Date'], as_index=False).sum()
 df2 = df2.groupby(['Email', 'Date'], as_index=False).sum()
 
-df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+"\data\orders_export.csv")
+df = pd.read_csv("../data/orders_export.csv")
 
 df = df[['Name', 'Email', 'Created at']]
 df.columns = ['Name', 'Email', 'Date']
@@ -90,7 +90,7 @@ df3 = df2.merge(df5, on = ['Email', 'Date'], how = 'inner')
 df3['Basket Value'] = df3.apply(lambda x: x['Revenue']/float(x['Total orders']), axis=1)
 df3 = df3.merge(df1, on = ['Email', 'Date'], how = 'inner')
 
-df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+"\data\orders_export.csv")
+df = pd.read_csv("../data/orders_export.csv")
 df1 = df[['Lineitem quantity', 'Lineitem price']]
 df1['Revenue'] = df1.apply(lambda x: x['Lineitem quantity'] * x['Lineitem price'], axis=1)
 df1=df1[['Lineitem quantity', 'Revenue']]
@@ -101,7 +101,7 @@ df1 = df1.sum()
 df3['Average Revenue'] = df1['Revenue']/float(max(df.index)+1)
 df3['Average Basket Size'] = df1['Lineitem quantity']/float(max(df.index)+1)
 
-customers = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\data\\customers_export.csv')
+customers = pd.read_csv('../data/customers_export.csv')
 
 customers['Name'] = customers['First Name'] + " " + customers['Last Name']
 customers['Address'] = customers['Address1'] + " " + customers['Address2'] + " " + customers['City']
