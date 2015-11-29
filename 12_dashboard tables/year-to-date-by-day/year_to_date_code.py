@@ -1,8 +1,9 @@
 import pandas as pd
 import re
 from datetime import datetime
+import os
 
-df = pd.read_csv("C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\year-to-date-by-day\\vend-total_revenue-sales_summary-by-day.csv")
+df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+"\data\\vend-total_revenue-sales_summary-by-day.csv")
 
 def convertDate(data):
     matchobj = re.match(r'(.*) (.*) (.*) (.*).*',data)
@@ -15,8 +16,8 @@ df = df.set_index('Unnamed: 0')
 df = df.transpose()
 df = df.reset_index()
 df = df[:max(df.index)-4]
-df.columns = ['Day', 'Revenue', 'Cost of Goods', 'Gross Profit', 'Margin']
+df.columns = ['Date', 'Revenue', 'Cost of Goods', 'Gross Profit', 'Margin']
 
-df['Day'] = df.Day.apply(convertDate)
+df['Date'] = df.Date.apply(convertDate)
 
-df.to_csv("C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\year-to-date-by-day\year-to-date-by-day.csv", index = False)
+df.to_csv("year-to-date-by-day.csv", index = False)

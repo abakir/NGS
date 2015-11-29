@@ -1,6 +1,7 @@
 import pandas as pd
+import os
 
-df = pd.read_csv('C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\data\orders_export.csv')
+df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\data\orders_export.csv')
 
 # take required fields
 df1=df[['Name','Email', 'Created at' ]]
@@ -39,4 +40,4 @@ df1['Average days between orders'] = df1.apply(lambda x: x['Difference']/float(x
 df2 = df1[['Email', 'Total orders', 'Average days between orders']]
 
             
-df2.to_csv("C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\customers_table\\frequency.csv",index=False)
+df2.to_csv("frequency.csv",index=False)

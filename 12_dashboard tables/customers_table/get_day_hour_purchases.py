@@ -1,8 +1,9 @@
 import pandas as pd
 from datetime import datetime
 import re
+import os
 
-df = pd.read_csv('C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\data\orders_export.csv')
+df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\data\orders_export.csv')
 
 df = df[['Name','Email', 'Created at']]
 df.columns = ['Name','Email', 'Date']
@@ -60,4 +61,4 @@ df1 = df1.groupby('Email', axis = 0, as_index=False).sum()
 
 df1.columns = ['Email', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', '0:00 - 2:00', '2:00 - 4:00', '4:00 - 6:00', '6:00 - 8:00', '8:00 - 10:00', '10:00 - 12:00', '12:00 - 14:00', '14:00 - 16:00', '16:00 - 18:00', '18:00 - 20:00', '20:00 - 22:00', '22:00 - 0:00']
 
-df1.to_csv("C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\customers_table\customer_days_time.csv", index = False)
+df1.to_csv("customer_days_time.csv", index = False)

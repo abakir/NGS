@@ -1,9 +1,10 @@
 import pandas as pd
 from datetime import datetime
 import re
+import os
 
-#read
-df = pd.read_csv("C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\data\orders_export.csv")
+
+df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+"\data\orders_export.csv")
 
 #function to get month and year
 def convertDate(data):
@@ -90,4 +91,4 @@ df1['Date'] = df1.Date.apply(lambda x: pd.to_datetime(datetime.strptime(x, '%Y-%
 df1 = df1.sort(['Count'], ascending = False)
 df1 = df1.reset_index().drop('index', 1)
 
-df1.to_csv("C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\\bought_together\pair_by_month.csv")
+df1.to_csv("pair_by_month.csv")

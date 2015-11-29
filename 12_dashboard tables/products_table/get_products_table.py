@@ -1,7 +1,7 @@
 import pandas as pd
+import os
 
-
-df = pd.read_csv('C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\\products_table\\vend-total_revenue-for-product_variant-by-month.csv')
+df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\data\\vend-total_revenue-for-product_variant-by-month.csv')
 
 
 df = df[:max(df.index)-4]
@@ -33,13 +33,16 @@ for i in range(0,max(df.index)+1):
 gprofit = df[['Product', 'Brand', 'Type', 'Revenue' , 'Gross Profit', 'CMGR', 'Period']]
 
 total = gprofit['Revenue'].sum(1)
+totalgp = gprofit['Gross Profit'].sum(1)
 gprofit['%Total Revenue'] = gprofit['Revenue'].apply(lambda x: x*100/total)
 totprods = max(gprofit.index) + 1
 temp = total/totprods
+gprofit['Average Revenue'] = temp
+gprofit['Average Gross Profit'] = totalgp/totprods
 gprofit['% Variation from Average'] = gprofit['Revenue'].apply(lambda x: (x-temp)*100/temp)
 total = gprofit['Gross Profit'].sum(1)
 gprofit['%Total Gross Profit'] = gprofit['Gross Profit'].apply(lambda x: x*100/total)
 
 #gprofit.columns = ['Product', 'Brand', 'Type', 'Revenue', '%Total Revenue', 'Gross Profit', '%Total Gross Profit', 'CMGR', '% Variation from Average']
 
-gprofit.to_csv('C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\\products_table\\products.csv', index=False)
+gprofit.to_csv('products.csv', index=False)

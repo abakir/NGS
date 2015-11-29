@@ -1,7 +1,8 @@
 import pandas as pd
 from datetime import datetime
 import time
-df = pd.read_csv('C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\data\orders_export.csv')
+import os
+df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\data\orders_export.csv')
 
 def getDate(data):
     return pd.to_datetime(datetime.strptime(data[:10], '%Y-%m-%d')).date()
@@ -33,4 +34,4 @@ df2 = df1.groupby(['Email'], axis=0, as_index=False).min()
     
 df2 = df2[['Email' , 'Days']]
 df2.columns =['Email', 'Days from Last order']
-df2.to_csv('C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\customers_table\latest_order.csv',index = False)
+df2.to_csv('latest_order.csv',index = False)

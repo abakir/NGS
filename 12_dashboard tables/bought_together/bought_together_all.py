@@ -1,7 +1,8 @@
 import pandas as pd
+import os
 
 
-df = pd.read_csv("C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\data\orders_export.csv")
+df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+"\data\orders_export.csv")
 
 df = df[['Name', 'Lineitem name']]
 df.columns = ['Name', 'Product']
@@ -60,4 +61,4 @@ df1 = df1[['Product1', 'Product2', 'Count']]
 df1 = df1.sort(['Count'], ascending = False)
 df1 = df1.reset_index().drop('index', 1)
 
-df1.to_csv("C:\Users\saisree849\Documents\GitHub\NGS_Project\\12_dashboard tables\\bought_together\pair_complete.csv")
+df1.to_csv("pair_complete.csv")
