@@ -5,7 +5,7 @@ import os
 def convertDate(data):
     return pd.to_datetime(datetime.strptime(data, '%b %Y')).date()
 
-df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\data\\vend-total_revenue-for-type-by-month.csv')
+df = pd.read_csv('../data/vend-total_revenue-for-type-by-month.csv')
 
 df = df[:max(df.index)-4]
 df = df[range(0,len(df.columns)-5)]
@@ -36,7 +36,7 @@ for i in df3.columns: #get each month
     a = df[i].tolist() #each month column to list
     b = b + a
 df1['Revenue'] = pd.Series(b)
-df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\data\\vend-gross_profit-for-type-by-month.csv')
+df = pd.read_csv('../data/vend-gross_profit-for-type-by-month.csv')
 df = df[:max(df.index)-4]
 df = df[range(0,len(df.columns)-5)]
 
