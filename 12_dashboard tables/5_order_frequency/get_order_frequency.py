@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import os
 
-df = pd.read_csv('../data/orders_export.csv')
+df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\data\orders_export.csv')
 
 # take required fields
 df1=df[['Email', 'Created at' ]]
@@ -39,7 +39,7 @@ for i in range(0,max(df1.index)):
 df1 = df1.groupby('Email', axis=0, as_index=False).sum()
 df1['Average'] = df1.apply(lambda x: x['Difference']/float(x['Count']), axis = 1)
 
-df2 = pd.read_csv("../data/customers_export.csv")
+df2 = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+"\data\customers_export.csv")
 df2 = df1.merge(df2, on = ['Email'], how = 'inner')
 
 df2 = df2[['Average']]

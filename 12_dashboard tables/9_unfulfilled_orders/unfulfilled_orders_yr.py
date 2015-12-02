@@ -2,8 +2,9 @@ import pandas as pd
 import re
 from datetime import datetime
 import os
+import datetime as DT
 
-df = pd.read_csv("../data/orders_export.csv")
+df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+"\data\orders_export.csv")
 #df.columns
 df = df[['Name', 'Fulfillment Status', 'Created at']]
 df.columns = ['Name', 'Fulfillment Status', 'Created']
@@ -21,7 +22,8 @@ df['Created'] = df.Created.apply(getDate)
 df1 = df.drop_duplicates(cols='Name', take_last=False)
 df1 = df1.reset_index().drop('index', 1)
 
-dt = datetime.strptime('2015-11-18', '%Y-%m-%d').date()
+today = DT.date.today()
+dt = today - DT.timedelta(days=1) 
 dt1 = datetime.strptime('2015-01-01', '%Y-%m-%d').date()
 df1['Yes'] = df1.apply(lambda x: (datetime.strptime(x['Created'], '%Y-%m-%d').date() <= dt) & (datetime.strptime(x['Created'], '%Y-%m-%d').date() >= dt1), axis = 1)
 
