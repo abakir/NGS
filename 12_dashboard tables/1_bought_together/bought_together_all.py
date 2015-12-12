@@ -4,49 +4,58 @@ import os
 
 df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+"\data\orders_export.csv")
 
+#get required columns and rename
 df = df[['Name', 'Lineitem name']]
 df.columns = ['Name', 'Product']
 
+#change product names to upper, remove duplicates, group the orders with same product
 df['Product'] = df.Product.apply(lambda x: x.upper())
 df = df.drop_duplicates().reset_index().drop('index',1)
 df = df.groupby([ 'Product'], axis = 0, as_index=False)['Name'].sum()
 
+#will be changed into a list by splitting with # (the start of order number)
 df['Name'] = df.Name.apply(lambda x: x.split("#"))
+#remove the first , in the list
 df['Name'] = df.Name.apply(lambda x: x[1:])
 
+#create new dataframe
 df1 = pd.DataFrame(columns = ['Product1', 'Product2','Name', 'Count'])
 
 b = []
-a = df['Product'].tolist() #create a list of type
+a = df['Product'].tolist() #create a list of products
 for i in range(0, max(df.index)+1): #count of months
-    b = b + a
-df1['Product1'] = pd.Series(b)
+    b = b + a #add list 'a' to list 'b', 'i' number of times 
+df1['Product1'] = pd.Series(b) #create a series for list 'b' and add to products column
+
 
 b = []
-x = df['Product'].tolist() #create a list of months
+x = df['Product'].tolist() #create a list of products
 for a in x: #take each month
     for i in range(0, max(df.index)+1): #count of types
-        b.append(a)
-df1['Product2'] = pd.Series(b)
+        b.append(a) #add each element in 'a', 'i' number of times
+df1['Product2'] = pd.Series(b) #create a series for list 'b' and add to products column
 
+#create a list of lists having orders for each product. 
 na = []
-e = df['Name'].tolist()
+e = df['Name'].tolist() 
+#add each list of orders for a product with all the list o orders of one product
 for k in e:
     for j in e:
         p = k + j
         na.append(p)
         
-df1['Name'] = pd.Series(na)
+df1['Name'] = pd.Series(na) #create a series for list 'na' and add to name column
 
-df1 = df1[df1.Product1 != df1.Product2]
+df1 = df1[df1.Product1 != df1.Product2] #remove the rows whose product1 and product2 rows are same
 
 def getUnique(data):
-    return len(data) - len(set(data))
+    return len(data) - len(set(data)) #count all the unique orders
     
 df1['Count'] = df1.Name.apply(getUnique)
 
-df1 = df1[df1.Count != 0]
+df1 = df1[df1.Count != 0] #remove rows with 0 count
 
+#rows of type 21 and 12 are same, retain one instance of such rows
 def combineProds(name1, name2, count):
     if(name1 < name2):
         return name1 + "," + name2 + "," +count
@@ -56,8 +65,10 @@ def combineProds(name1, name2, count):
 df1['newcol'] = df1.apply(lambda x: combineProds(x['Product1'], x['Product2'],str(x['Count'])), axis=1)
 df1 = df1.drop_duplicates('newcol').reset_index().drop('index',1)
 
+#get required products
 df1 = df1[['Product1', 'Product2', 'Count']]
 
+#sort based on count in descending order
 df1 = df1.sort(['Count'], ascending = False)
 df1 = df1.reset_index().drop('index', 1)
 

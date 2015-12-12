@@ -28,8 +28,8 @@ df1= df1.reset_index().drop('index',1)
 n = 1
 for i in range(0,max(df1.index)):
     if(df1.iloc[i,0]==df1.iloc[i+1,0]):
-        n = n + 1
-        df1.iloc[i+1,2]=(df1.iloc[i+1,1]-df1.iloc[i,1]).days
+        n = n + 1 #count total number of orders
+        df1.iloc[i+1,2]=(df1.iloc[i+1,1]-df1.iloc[i,1]).days #count days between orders
         if (i == max(df1.index) - 1):
             df1.iloc[i + 1,3] = n
     else:
@@ -37,13 +37,16 @@ for i in range(0,max(df1.index)):
         n = 1
 
 df1 = df1.groupby('Email', axis=0, as_index=False).sum()
+
+#calculate average days between orders
 df1['Average'] = df1.apply(lambda x: x['Difference']/float(x['Count']), axis = 1)
 
 df2 = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+"\data\customers_export.csv")
 df2 = df1.merge(df2, on = ['Email'], how = 'inner')
 
+
 df2 = df2[['Average']]
-df2 = df2[df2.Average != 0]
+df2 = df2[df2.Average != 0] #retain average > 0
 df2 = df2.reset_index().drop('index',1)
 a = df2['Average'].tolist()
 a = np.asarray(a)
@@ -51,6 +54,7 @@ a = np.asarray(a)
 df4 = pd.DataFrame(columns = ['Days between orders', 'Customers'])
 df4['Days between orders'] = pd.Series(['1 to 4', '4 to 7', '7 to 15', '15 to 30', '30 to 60', '60 to 100', '100+'])
 
+#count orders in given range
 df4.iloc[0, 1] = np.compress((0 < a) & (a < 4), a).size
 df4.iloc[1, 1] = np.compress((4 <= a) & (a < 7), a).size
 df4.iloc[2, 1] = np.compress((7 <= a) & (a < 15), a).size

@@ -4,19 +4,21 @@ import time
 import os
 df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\data\orders_export.csv')
 
+#get date in datetime format
 def getDate(data):
     return pd.to_datetime(datetime.strptime(data[:10], '%Y-%m-%d')).date()
     
-
+#get days from today to order date
 def diffDates(data):
     return (today - data).days
     
-# take required fields
+#get required columns
 df1=df[['Email', 'Created at' ]]
 
-#let there be only one row for each order
 df1=df1.drop_duplicates()
 df1= df1.reset_index().drop('index',1)
+
+#rename columns
 df1.columns = ['Email', 'Date']
 
 df1['Date'] = df1.Date.apply(getDate)
@@ -24,12 +26,15 @@ df1['Date'] = df1.Date.apply(getDate)
 df1=df1.drop_duplicates()
 df1= df1.reset_index().drop('index',1)
 
+#get today's date in datetime format
 today = pd.to_datetime(datetime.strptime(time.strftime("%Y-%m-%d"), '%Y-%m-%d')).date()
 
 df1['Days'] = df1.Date.apply(diffDates)
 
 df1 = df1.sort(['Email', 'Days'])
 df1= df1.reset_index().drop('index',1)
+
+#get the email and the min days row
 df2 = df1.groupby(['Email'], axis=0, as_index=False).min()
     
 df2 = df2[['Email' , 'Days']]

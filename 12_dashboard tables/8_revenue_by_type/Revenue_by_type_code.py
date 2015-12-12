@@ -7,8 +7,8 @@ def convertDate(data):
 
 df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\data\\vend-total_revenue-for-type-by-month.csv')
 
-df = df[:max(df.index)-4]
-df = df[range(0,len(df.columns)-5)]
+df = df[:max(df.index)-4] #remove aggregated rows
+df = df[range(0,len(df.columns)-5)] #remove unwanted columns
 
 df3 = df.groupby('Type', axis=0, as_index=True).sum() #columns include only months
 df = df.groupby('Type', axis=0, as_index=False).sum() # columns include type and months
