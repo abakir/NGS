@@ -30,7 +30,7 @@ df4 = df2.merge(df, on = ['Name', 'Email'], how = 'inner')
 
 df4 = df4[['Name', 'Revenue', 'Basket Value', 'Segment', 'Address','Phone', 'Total orders', 'Average days between orders', 'Email', 'Days from Last order', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', '0:00 - 2:00', '2:00 - 4:00', '4:00 - 6:00', '6:00 - 8:00', '8:00 - 10:00', '10:00 - 12:00', '12:00 - 14:00', '14:00 - 16:00', '16:00 - 18:00', '18:00 - 20:00', '20:00 - 22:00', '22:00 - 0:00']]
 
-df = pd.read_csv(cfg['root']+cfg['data']+cfg["orders"])
+df = pd.read_csv(cfg['root']+cfg['data']+cfg["orders"],low_memory=False)
 df1 = df[['Lineitem quantity', 'Lineitem price']]
 
 #calculate revenue

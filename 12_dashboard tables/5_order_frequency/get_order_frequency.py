@@ -6,7 +6,7 @@ import yaml
 with open("config.yaml", 'r') as ymlfile:
         cfg = yaml.load(ymlfile)
 
-df = pd.read_csv(cfg['root']+cfg['data']+cfg["orders"])
+df = pd.read_csv(cfg['root']+cfg['data']+cfg["orders"],low_memory=False)
 
 
 # take required fields
