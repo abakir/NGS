@@ -50,4 +50,4 @@ df3.columns = [u'Email', u'Beef', u'Dried fruits and nuts', u'Fresh Beef & Poult
 df4 = df4.merge(df3, on = ['Email'], how='left')
 
 df4[['Total orders', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', '0:00 - 2:00', '2:00 - 4:00', '4:00 - 6:00', '6:00 - 8:00', '8:00 - 10:00', '10:00 - 12:00', '12:00 - 14:00', '14:00 - 16:00', '16:00 - 18:00', '18:00 - 20:00', '20:00 - 22:00', '22:00 - 0:00']] = df4[['Total orders', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', '0:00 - 2:00', '2:00 - 4:00', '4:00 - 6:00', '6:00 - 8:00', '8:00 - 10:00', '10:00 - 12:00', '12:00 - 14:00', '14:00 - 16:00', '16:00 - 18:00', '18:00 - 20:00', '20:00 - 22:00', '22:00 - 0:00']].astype(float)
-df4.to_csv(cfg['root']+cfg['output']+cfg['customers'],index = False)
+df4.to_csv(cfg['root']+cfg['output']+cfg['customers_mid'],index = False)

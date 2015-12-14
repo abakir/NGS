@@ -27,4 +27,4 @@ df = df[:max(df.index)-4]
 df.columns = ['Date', 'Revenue', 'Cost of Goods', 'Gross Profit', 'Margin']
 
 df['Date'] = df.Date.apply(convertDate)
-df.to_csv(cfg['root']+cfg['output']+cfg['year-to-date-by-day'], index = False)
+df.to_csv(cfg['root']+cfg['output']+cfg['year_to_date_by_day'], index = False)
