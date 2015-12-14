@@ -1,7 +1,11 @@
 import pandas as pd
 import os
+import yaml
 
-df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\data\orders_export.csv')
+with open("config.yaml", 'r') as ymlfile:
+        cfg = yaml.load(ymlfile)
+
+df = pd.read_csv(cfg['root']+cfg['data']+cfg["orders"])
 df1 = df
 
 #get required columns and rename
@@ -29,7 +33,7 @@ df = df.merge(df1, on = ['Email'], how = 'inner')
 df['Basket Value'] = df['Revenue'] / df['Orders']
 customer_value = df[['Email', 'Revenue', 'Basket Value']]
 
-customers = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\data\\customers_export.csv')
+customers = pd.read_csv(cfg['root']+cfg['data']+cfg["customers"])
 
 #concatenate name, address
 customers['Name'] = customers['First Name'] + " " + customers['Last Name']
@@ -39,11 +43,11 @@ customers = customers[['Name', 'Address', 'Phone', 'Email']]
 
 customer_value = customers.merge(customer_value, on = ['Email'], how = 'inner')
 
-raw_segments = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\data\segments.csv')
+raw_segments = pd.read_csv(cfg['root']+cfg['data']+cfg["segments"])
 
 #join with new dataframe
 customer_info_with_segments = raw_segments.merge(customer_value, on = ['Email'], how = 'outer')
 customer_info_with_segments = customer_info_with_segments[['Name', 'Revenue', 'Basket Value', 'Segment', 'Email', 'Address', 'Phone' ]]
 
 
-customer_info_with_segments.to_csv('customers_segments.csv', index=False)
+customer_info_with_segments.to_csv(cfg['root']+cfg['customers_table']+cfg['customers_segments'], index=False)

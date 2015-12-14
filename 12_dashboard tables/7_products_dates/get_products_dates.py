@@ -1,8 +1,12 @@
 import pandas as pd
 from datetime import datetime
 import os
+import yaml
 
-df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\data\\vend-total_revenue-for-product_variant-by-month.csv')
+with open("config.yaml", 'r') as ymlfile:
+        cfg = yaml.load(ymlfile)
+
+df = pd.read_csv(cfg['root']+cfg['data']+cfg["total_revenue_prod"])
 
 df = df[[0,3,5]+range(7,len(df.columns)-5)]#reqd columns
 df = df[:max(df.index)-4] #reqd rows
@@ -59,8 +63,7 @@ df.index.name = None
 for i in range(0, max(df2.index)+1):
     df2.loc[i, 'Revenue'] = df.loc[df2.loc[i, 'New name'], df2.loc[i, 'Date']]
     
-
-df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\data\\vend-gross_profit-for-product_variant-by-month.csv')
+df = pd.read_csv(cfg['root']+cfg['data']+cfg["gross_profit_prod"])
 
 df = df[[0,3,5]+range(7,len(df.columns)-5)]#reqd columns
 df = df[:max(df.index)-4] #reqd rows
@@ -101,7 +104,7 @@ gprofit['% Variation from Average'] = gprofit['Revenue'].apply(lambda x: (x-temp
 total = gprofit['Gross Profit'].sum(1)
 gprofit['%Total Gross Profit'] = gprofit['Gross Profit'].apply(lambda x: x*100/total)
 
-df1 = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\\6_products_table\\products.csv')
+df1 = pd.read_csv(cfg['root']+cfg['product_table']+cfg['products'])
 df1 = df1[['Product', 'Brand', 'Type', 'CMGR']]
 df1['Product'] = df1.apply(lambda x: str(x['Product']) +","+ str(x['Brand']) +","+ str(x['Type']), axis=1)
 df1 = df1[['Product', 'CMGR']]
@@ -115,4 +118,4 @@ for i in range(0, max(gprofit.index)+1):
     
 gprofit = gprofit[['Product', 'Brand', 'Type', 'Date', 'Revenue', 'Gross Profit', 'CMGR', 'Average Revenue', 'Average Gross Profit', '%Total Revenue', '% Variation from Average', '%Total Gross Profit']]
 gprofit=gprofit[gprofit['Revenue'] != 0] #remove products with zero revenue
-gprofit.to_csv('products_dates.csv', index=False)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+gprofit.to_csv(cfg['root']+cfg['output']+cfg['products_dates'], index=False)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    

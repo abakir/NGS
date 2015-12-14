@@ -1,11 +1,15 @@
 import pandas as pd
 from datetime import datetime
 import os
+import yaml
+
+with open("config.yaml", 'r') as ymlfile:
+        cfg = yaml.load(ymlfile)
+
+df = pd.read_csv(cfg['root']+cfg['data']+cfg["total_revenue_type"])
 
 def convertDate(data):
     return pd.to_datetime(datetime.strptime(data, '%b %Y')).date()
-
-df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\data\\vend-total_revenue-for-type-by-month.csv')
 
 df = df[:max(df.index)-4] #remove aggregated rows
 df = df[range(0,len(df.columns)-5)] #remove unwanted columns
@@ -36,7 +40,7 @@ for i in df3.columns: #get each month
     a = df[i].tolist() #each month column to list
     b = b + a
 df1['Revenue'] = pd.Series(b)
-df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\data\\vend-gross_profit-for-type-by-month.csv')
+df = pd.read_csv(cfg['root']+cfg['data']+cfg["gross_profit_type"])
 df = df[:max(df.index)-4]
 df = df[range(0,len(df.columns)-5)]
 
@@ -49,4 +53,4 @@ for i in df3.columns: #get each month
     b = b + a
 df1['Gross Profit'] = pd.Series(b)
 
-df1.to_csv("Revenue_by_type.csv", index = False)
+df1.to_csv(cfg['root']+cfg['output']+cfg['Revenue_by_type'], index = False)

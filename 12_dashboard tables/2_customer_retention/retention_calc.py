@@ -2,9 +2,12 @@ import pandas as pd
 from datetime import datetime, timedelta
 import re
 import os
+import yaml
 
+with open("config.yaml", 'r') as ymlfile:
+        cfg = yaml.load(ymlfile)
 
-df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+"\data\orders_export.csv")
+df = pd.read_csv(cfg['root']+cfg['data']+cfg["orders"])
 
 #get required columns and rename
 df = df[['Email', 'Created at']] 
@@ -74,4 +77,4 @@ df3.loc[0, 'Total Count'] = max(df1.index) + 1
 df3.loc[0, 'Retention Rate'] = df3.loc[0, 'Cutomers 30 days']/float(df3.loc[0, 'Total Count'])
 df3.loc[0, 'Regular Customers'] = df3.loc[0, 'Cutomers 20 days']/float(df3.loc[0, 'Total Count'])
 
-df3.to_csv("with_retention.csv", index = False)
+df3.to_csv(cfg['root']+cfg['output']+cfg['with_retention'], index = False)

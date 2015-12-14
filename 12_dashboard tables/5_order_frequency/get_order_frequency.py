@@ -1,8 +1,13 @@
 import pandas as pd
 import numpy as np
 import os
+import yaml
 
-df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\data\orders_export.csv')
+with open("config.yaml", 'r') as ymlfile:
+        cfg = yaml.load(ymlfile)
+
+df = pd.read_csv(cfg['root']+cfg['data']+cfg["orders"])
+
 
 # take required fields
 df1=df[['Email', 'Created at' ]]
@@ -41,7 +46,7 @@ df1 = df1.groupby('Email', axis=0, as_index=False).sum()
 #calculate average days between orders
 df1['Average'] = df1.apply(lambda x: x['Difference']/float(x['Count']), axis = 1)
 
-df2 = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+"\data\customers_export.csv")
+df2 = pd.read_csv(cfg['root']+cfg['data']+cfg["customers"])
 df2 = df1.merge(df2, on = ['Email'], how = 'inner')
 
 
@@ -63,4 +68,4 @@ df4.iloc[4, 1] = np.compress((30 <= a) & (a < 60), a).size
 df4.iloc[5, 1] = np.compress((60 <= a) & (a < 100), a).size
 df4.iloc[6, 1] = np.compress((100 <= a), a).size
 
-df4.to_csv('order_frequency.csv', index = False)
+df4.to_csv(cfg['root']+cfg['output']+cfg['order_frequency'], index = False)

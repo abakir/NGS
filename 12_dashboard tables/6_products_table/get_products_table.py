@@ -1,7 +1,11 @@
 import pandas as pd
 import os
+import yaml
 
-df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\data\\vend-total_revenue-for-product_variant-by-month.csv')
+with open("config.yaml", 'r') as ymlfile:
+        cfg = yaml.load(ymlfile)
+
+df = pd.read_csv(cfg['root']+cfg['data']+cfg["total_revenue_prod"])
 
 #remove the last rows which are aggregated values
 df = df[:max(df.index)-4]
@@ -50,4 +54,4 @@ gprofit['% Variation from Average'] = gprofit['Revenue'].apply(lambda x: (x-temp
 total = gprofit['Gross Profit'].sum(1)
 gprofit['%Total Gross Profit'] = gprofit['Gross Profit'].apply(lambda x: x*100/total)
 
-gprofit.to_csv('products.csv', index=False)
+gprofit.to_csv(cfg['root']+cfg['output']+cfg['products'], index=Falcfg[s)]

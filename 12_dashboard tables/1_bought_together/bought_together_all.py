@@ -1,8 +1,11 @@
 import pandas as pd
 import os
+import yaml
 
+with open("config.yaml", 'r') as ymlfile:
+        cfg = yaml.load(ymlfile)
 
-df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+"\data\orders_export.csv")
+df = pd.read_csv(cfg['root']+cfg['data']+cfg["orders"])
 
 #get required columns and rename
 df = df[['Name', 'Lineitem name']]
@@ -72,4 +75,4 @@ df1 = df1[['Product1', 'Product2', 'Count']]
 df1 = df1.sort(['Count'], ascending = False)
 df1 = df1.reset_index().drop('index', 1)
 
-df1.to_csv("pair_complete.csv")
+df1.to_csv(cfg['root']+cfg['output']+cfg['pair_complete'])

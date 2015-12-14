@@ -2,7 +2,12 @@ import pandas as pd
 from datetime import datetime
 import time
 import os
-df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\data\orders_export.csv')
+import yaml
+
+with open("config.yaml", 'r') as ymlfile:
+        cfg = yaml.load(ymlfile)
+
+df = pd.read_csv(cfg['root']+cfg['data']+cfg["orders"])
 
 #get date in datetime format
 def getDate(data):
@@ -39,4 +44,4 @@ df2 = df1.groupby(['Email'], axis=0, as_index=False).min()
     
 df2 = df2[['Email' , 'Days']]
 df2.columns =['Email', 'Days from Last order']
-df2.to_csv('latest_order.csv',index = False)
+df2.to_csv(cfg['root']+cfg['customers_table']+cfg['latest_order'],index = False)

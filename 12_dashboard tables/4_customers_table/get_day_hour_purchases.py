@@ -2,8 +2,13 @@ import pandas as pd
 from datetime import datetime
 import re
 import os
+import yaml
 
-df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\data\orders_export.csv')
+with open("config.yaml", 'r') as ymlfile:
+        cfg = yaml.load(ymlfile)
+
+df = pd.read_csv(cfg['root']+cfg['data']+cfg["orders"])
+
 
 #get required columns and rename
 df = df[['Name','Email', 'Created at']]
@@ -67,4 +72,4 @@ df1 = df1.groupby('Email', axis = 0, as_index=False).sum()
 
 df1.columns = ['Email', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', '0:00 - 2:00', '2:00 - 4:00', '4:00 - 6:00', '6:00 - 8:00', '8:00 - 10:00', '10:00 - 12:00', '12:00 - 14:00', '14:00 - 16:00', '16:00 - 18:00', '18:00 - 20:00', '20:00 - 22:00', '22:00 - 0:00']
 
-df1.to_csv("customer_days_time.csv", index = False)
+df1.to_csv(cfg['root']+cfg['customers_table']+cfg['customer_days_time'], index = False)

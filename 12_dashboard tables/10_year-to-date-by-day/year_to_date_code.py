@@ -2,8 +2,12 @@ import pandas as pd
 import re
 from datetime import datetime
 import os
+import yaml
 
-df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+"\data\\vend-total_revenue-sales_summary-by-day.csv")
+with open("config.yaml", 'r') as ymlfile:
+        cfg = yaml.load(ymlfile)
+
+df = pd.read_csv(cfg['root']+cfg['data']+cfg["total_revenue_daily"])
 
 #get date
 def convertDate(data):
@@ -23,5 +27,4 @@ df = df[:max(df.index)-4]
 df.columns = ['Date', 'Revenue', 'Cost of Goods', 'Gross Profit', 'Margin']
 
 df['Date'] = df.Date.apply(convertDate)
-
-df.to_csv("year-to-date-by-day.csv", index = False)
+df.to_csv(cfg['root']+cfg['output']+cfg['year-to-date-by-day'], index = False)

@@ -3,8 +3,12 @@ import re
 from datetime import datetime
 import os
 import datetime as DT
+import yaml
 
-df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+"\data\orders_export.csv")
+with open("config.yaml", 'r') as ymlfile:
+        cfg = yaml.load(ymlfile)
+
+df = pd.read_csv(cfg['root']+cfg['data']+cfg["orders"])
 #df.columns
 df = df[['Name', 'Fulfillment Status', 'Created at']]
 df.columns = ['Name', 'Fulfillment Status', 'Created']
@@ -42,4 +46,4 @@ df2['Unfulfilled'] = df2.apply(lambda x: 1 if x['Fulfillment Status'] == 'unfulf
 df2 = df2.groupby(['Created'], axis=0, as_index=False).sum() #count total unfulfilled orders
 df2['% Unfulfilled'] = df2.apply(lambda x: x['Unfulfilled']*100/float(x['All']), axis = 1)
 
-df2.to_csv("unfulfilled_yr.csv", index = False)
+df2.to_csv(cfg['root']+cfg['output']+"/unfulfilled_yr.csv", index = False)

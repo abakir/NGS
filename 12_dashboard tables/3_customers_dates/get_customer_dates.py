@@ -2,9 +2,12 @@ import pandas as pd
 from datetime import datetime
 import re
 import os
+import yaml
 
+with open("config.yaml", 'r') as ymlfile:
+        cfg = yaml.load(ymlfile)
 
-df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+"\data\orders_export.csv")
+df = pd.read_csv(cfg['root']+cfg['data']+cfg["orders"])
 
 #get the first of the month
 def convertDate(data):
@@ -35,7 +38,7 @@ df2['Total orders'] = 1
 df5 = df5.groupby(['Email', 'Date'], as_index=False).sum()
 df2 = df2.groupby(['Email', 'Date'], as_index=False).sum()
 
-df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+"\data\orders_export.csv")
+df = pd.read_csv(cfg['root']+cfg['data']+cfg["orders"])
 
 #get required columns and rename
 df = df[['Name', 'Email', 'Created at']]
@@ -107,7 +110,7 @@ df3 = df2.merge(df5, on = ['Email', 'Date'], how = 'inner')
 df3['Basket Value'] = df3.apply(lambda x: x['Revenue']/float(x['Total orders']), axis=1)
 df3 = df3.merge(df1, on = ['Email', 'Date'], how = 'inner')
 
-df = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+"\data\orders_export.csv")
+df = pd.read_csv(cfg['root']+cfg['data']+cfg["orders"])
 
 #get required columns
 df1 = df[['Lineitem quantity', 'Lineitem price']]
@@ -126,7 +129,7 @@ df1 = df1.sum()
 df3['Average Revenue'] = df1['Revenue']/float(max(df.index)+1)
 df3['Average Basket Size'] = df1['Lineitem quantity']/float(max(df.index)+1)
 
-customers = pd.read_csv(os.path.split(os.path.abspath(os.getcwd()))[0]+'\data\\customers_export.csv')
+customers = pd.read_csv(cfg['root']+cfg['data']+cfg["customers"])
 
 #concatenate name, address
 customers['Name'] = customers['First Name'] + " " + customers['Last Name']
@@ -135,4 +138,4 @@ customers['Address'] = customers['Address1'] + " " + customers['Address2'] + " "
 customers = customers[['Name', 'Address', 'Phone', 'Email']]
 
 df3 = customers.merge(df3, on = ['Email'], how = 'inner')
-df3.to_csv('customer_dates.csv', index=False)
+df3.to_csv(cfg['root']+cfg['output']+cfg['customer_dates'], index=False)
