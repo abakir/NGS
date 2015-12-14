@@ -26,27 +26,27 @@ execfile(os.path.join(cfg['root']+cfg['customers_dates']+cfg['fget_customer_date
 
 
 sys.path.insert(0, os.path.join(cfg['root']+cfg['customers_table']))
-import get_day_hour_purchases
+import get_day_hour_purchases_1
 execfile(os.path.join(cfg['root']+cfg['customers_table']+cfg['fget_day_hour_purchases']))
 
 
 sys.path.insert(0, os.path.join(cfg['root']+cfg['customers_table']))
-import get_info_segments
+import get_info_segments_2
 execfile(os.path.join(cfg['root']+cfg['customers_table']+cfg['fget_info_segments']))
 
 
 sys.path.insert(0, os.path.join(cfg['root']+cfg['customers_table']))
-import get_latest_order_days
+import get_latest_order_days_3
 execfile(os.path.join(cfg['root']+cfg['customers_table']+cfg['fget_latest_order_days']))
 
 
 sys.path.insert(0, os.path.join(cfg['root']+cfg['customers_table']))
-import get_order_frequency_customer
+import get_order_frequency_customer_4
 execfile(os.path.join(cfg['root']+cfg['customers_table']+cfg['fget_order_frequency_customer']))
 
 
 sys.path.insert(0, os.path.join(cfg['root']+cfg['customers_table']))
-import merge_tables
+import merge_tables_5
 execfile(os.path.join(cfg['root']+cfg['customers_table']+cfg['fmerge_tables']))
 
 
