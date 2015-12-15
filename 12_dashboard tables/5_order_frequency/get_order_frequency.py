@@ -68,4 +68,4 @@ df4.iloc[4, 1] = np.compress((30 <= a) & (a < 60), a).size
 df4.iloc[5, 1] = np.compress((60 <= a) & (a < 100), a).size
 df4.iloc[6, 1] = np.compress((100 <= a), a).size
 
-df4.to_csv(cfg['root']+cfg['output']+cfg['order_frequency'], index = False)
+df4.to_csv(cfg['root']+cfg['output']+cfg['order_frequency_mid'], index = False)

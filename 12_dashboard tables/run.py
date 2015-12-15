@@ -79,7 +79,7 @@ sys.path.insert(0, os.path.join(cfg['root']+cfg['unfulfilled_orders']))
 import unfulfilled_orders_yr
 execfile(os.path.join(cfg['root']+cfg['unfulfilled_orders']+cfg['funfulfilled_orders_yr']))
 
-sys.path.insert(0, os.path.join(cfg['root']+cfg['year-to-date-by-day']))
+sys.path.insert(0, os.path.join(cfg['root']+cfg['year_to_date_by_day']))
 import year_to_date_code
-execfile(os.path.join(cfg['root']+cfg['year-to-date-by-day']+cfg['fyear_to_date_code']))
+execfile(os.path.join(cfg['root']+cfg['year_to_date_by_day']+cfg['fyear_to_date_code']))
 

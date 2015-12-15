@@ -42,8 +42,8 @@ for i in range(0,max(df.index)+1):
     
 gprofit = df[['Product', 'Brand', 'Type', 'Revenue' , 'Gross Profit', 'CMGR', 'Period']]
 
-total = gprofit['Revenue'].sum(1) #total revenue
-totalgp = gprofit['Gross Profit'].sum(1) #total gross profit
+total = gprofit['Revenue'].sum() #total revenue
+totalgp = gprofit['Gross Profit'].sum() #total gross profit
 gprofit['%Total Revenue'] = gprofit['Revenue'].apply(lambda x: x*100/total) #%total revenue
 totprods = max(gprofit.index) + 1
 temp = total/totprods #total revenue / total products
@@ -51,7 +51,7 @@ gprofit['Average Revenue'] = temp #avg revenue
 gprofit['Average Gross Profit'] = totalgp/totprods #avg gross profit
 
 gprofit['% Variation from Average'] = gprofit['Revenue'].apply(lambda x: (x-temp)*100/temp)
-total = gprofit['Gross Profit'].sum(1)
+total = gprofit['Gross Profit'].sum()
 gprofit['%Total Gross Profit'] = gprofit['Gross Profit'].apply(lambda x: x*100/total)
 
-gprofit.to_csv(cfg['root']+cfg['output']+cfg['products'], index=Falcfg[s)]
+gprofit.to_csv(cfg['root']+cfg['output']+cfg['products'], index=False)
