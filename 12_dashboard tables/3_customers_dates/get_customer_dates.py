@@ -1,7 +1,7 @@
 import pandas as pd
 from datetime import datetime
+import datetime as DT
 import re
-import os
 import yaml
 
 with open("config.yaml", 'r') as ymlfile:
@@ -9,16 +9,7 @@ with open("config.yaml", 'r') as ymlfile:
 
 df = pd.read_csv(cfg['root']+cfg['data']+cfg["orders"])
 
-#get the first of the month
-def convertDate(data):
-    matchobj = re.match(r'(.*) (.*) (.*).*',data)
-    data = matchobj.group(1)
-    matchobj = re.match(r'(.*)-(.*)-(.*).*',data)
-    data = matchobj.group(1) + "-" + matchobj.group(2) + "-01"
-    return data
-    
 df = df[['Name', 'Email', 'Created at', 'Lineitem quantity', 'Lineitem price']]
-
 #calculate revenue
 df['Revenue'] = df.apply(lambda x: x['Lineitem quantity']*x['Lineitem price'], axis=1)
 
@@ -26,23 +17,7 @@ df['Revenue'] = df.apply(lambda x: x['Lineitem quantity']*x['Lineitem price'], a
 df = df[['Name', 'Email', 'Created at', 'Revenue']]
 df.columns = ['Name', 'Email', 'Date', 'Revenue']
 
-df['Date'] = df.Date.apply(convertDate)
-
-#create new data frames
-df5 = df[['Email', 'Date', 'Revenue']]
-df2 = df[['Name', 'Email', 'Date']]
-df2 = df2.drop_duplicates().reset_index().drop('index',1)
-
-#count total number of orders
-df2['Total orders'] = 1
-df5 = df5.groupby(['Email', 'Date'], as_index=False).sum()
-df2 = df2.groupby(['Email', 'Date'], as_index=False).sum()
-
-df = pd.read_csv(cfg['root']+cfg['data']+cfg["orders"])
-
-#get required columns and rename
-df = df[['Name', 'Email', 'Created at']]
-df.columns = ['Name', 'Email', 'Date']
+df['Date1'] = df['Date']
 
 #get date as day
 def getDay(data):
@@ -80,13 +55,34 @@ def getHours(data):
     elif(num >= 22):
         return 22
         
-df['Day'] = df.Date.apply(getDay)
-df['Hours'] = df.Date.apply(getHours)
+df['Day'] = df.Date1.apply(getDay)
+df['Hours'] = df.Date1.apply(getHours)
 
-df['Date'] = df.Date.apply(convertDate)
+df = df[['Name', 'Email', 'Date', 'Revenue', 'Day', 'Hours']]
+
+
+def changeDate(data):
+    matchobj = re.match(r'(.*) (.*) (.*).*',data)
+    if (pd.to_datetime(datetime.strptime(matchobj.group(1), '%Y-%m-%d')).date().strftime("%A") == 'Wednesday'):
+        return datetime.strptime(matchobj.group(1), '%Y-%m-%d').date() - DT.timedelta(days=6)
+    if (pd.to_datetime(datetime.strptime(matchobj.group(1), '%Y-%m-%d')).date().strftime("%A") == 'Tuesday'):
+        return datetime.strptime(matchobj.group(1), '%Y-%m-%d').date() - DT.timedelta(days=5)
+    if (pd.to_datetime(datetime.strptime(matchobj.group(1), '%Y-%m-%d')).date().strftime("%A") == 'Monday'):
+        return datetime.strptime(matchobj.group(1), '%Y-%m-%d').date() - DT.timedelta(days=4)
+    if (pd.to_datetime(datetime.strptime(matchobj.group(1), '%Y-%m-%d')).date().strftime("%A") == 'Sunday'):
+        return datetime.strptime(matchobj.group(1), '%Y-%m-%d').date() - DT.timedelta(days=3)
+    if (pd.to_datetime(datetime.strptime(matchobj.group(1), '%Y-%m-%d')).date().strftime("%A") == 'Saturday'):
+        return datetime.strptime(matchobj.group(1), '%Y-%m-%d').date() - DT.timedelta(days=2)
+    if (pd.to_datetime(datetime.strptime(matchobj.group(1), '%Y-%m-%d')).date().strftime("%A") == 'Friday'):
+        return datetime.strptime(matchobj.group(1), '%Y-%m-%d').date() - DT.timedelta(days=1)
+df['Date'] = df.Date.apply(changeDate)
 df = df.drop_duplicates().reset_index().drop('index',1)
 
-#create new df and initialize columns
+data = df[['Email', 'Date', 'Revenue']]
+df = df[['Email', 'Date', 'Day', 'Hours']]
+
+df = df.drop_duplicates().reset_index().drop('index',1)
+
 df1 = pd.DataFrame(columns = ['Email', 'Date', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22])
 df1['Email'] = df['Email']
 df1['Date'] = df['Date']
@@ -94,14 +90,21 @@ df1['Sunday'] = df1['Monday'] = df1['Tuesday'] = df1['Wednesday'] = df1['Thursda
 
 #assign values to hours and days columns
 for i in range(0, max(df.index)+1):
+    df1.loc[i,(df.iloc[i,2])] = 1
     df1.loc[i,(df.iloc[i,3])] = 1
-    df1.loc[i,(df.iloc[i,4])] = 1
     
 #count total orders per hours, days
 df1 = df1.groupby(['Email', 'Date'], axis = 0, as_index=False).sum()
 
 #rename columns
 df1.columns = ['Email', 'Date', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', '0:00 - 2:00', '2:00 - 4:00', '4:00 - 6:00', '6:00 - 8:00', '8:00 - 10:00', '10:00 - 12:00', '12:00 - 14:00', '14:00 - 16:00', '16:00 - 18:00', '18:00 - 20:00', '20:00 - 22:00', '22:00 - 0:00']
+
+df5 = data[['Email', 'Date', 'Revenue']]
+df2 = data[['Email', 'Date']]
+df2 = df2.drop_duplicates().reset_index().drop('index',1)
+df2['Total orders'] = 1
+df5 = df5.groupby(['Email', 'Date'], as_index=False).sum()
+df2 = df2.groupby(['Email', 'Date'], as_index=False).sum()
 
 #join data frames
 df3 = df2.merge(df5, on = ['Email', 'Date'], how = 'inner')
@@ -111,7 +114,6 @@ df3['Basket Value'] = df3.apply(lambda x: x['Revenue']/float(x['Total orders']),
 df3 = df3.merge(df1, on = ['Email', 'Date'], how = 'inner')
 
 df = pd.read_csv(cfg['root']+cfg['data']+cfg["orders"])
-
 #get required columns
 df1 = df[['Lineitem quantity', 'Lineitem price']]
 
@@ -128,6 +130,7 @@ df = df.drop_duplicates().reset_index().drop('index',1)
 df1 = df1.sum()
 df3['Average Revenue'] = df1['Revenue']/float(max(df.index)+1)
 df3['Average Basket Size'] = df1['Lineitem quantity']/float(max(df.index)+1)
+
 
 customers = pd.read_csv(cfg['root']+cfg['data']+cfg["customers"])
 

@@ -12,9 +12,10 @@ df = pd.read_csv(cfg['root']+cfg['data']+cfg["orders"],low_memory=False)
 df = df[['Name', 'Fulfillment Status', 'Created at']]
 
 #get date
-for i in range(0, max(df.index)+1):
-    matchobj = re.match(r'(.*) (.*) (.*).*',df.iloc[i, 2])
-    df.iloc[i, 2] = matchobj.group(1)
+def getDate(data):
+    matchobj = re.match(r'(.*) (.*) (.*).*',data)
+    return matchobj.group(1)
+df['Created at'] = df.apply(lambda x: getDate(x['Created at']), axis=1)
     
 #take last item of the total order
 df1 = df.drop_duplicates(cols='Name', take_last=False)
