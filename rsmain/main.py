@@ -25,8 +25,6 @@ import os
 import MySQLdb
 import webapp2
 
-from google.appengine.api import app_identity
-
 # These environment variables are configured in app.yaml.
 CLOUDSQL_CONNECTION_NAME = os.environ.get('CLOUDSQL_CONNECTION_NAME')
 CLOUDSQL_USER = os.environ.get('CLOUDSQL_USER')
@@ -36,6 +34,9 @@ CLOUDSQL_PASSWORD = os.environ.get('CLOUDSQL_PASSWORD')
 def connect_to_cloudsql():
     # When deployed to App Engine, the `SERVER_SOFTWARE` environment variable
     # will be set to 'Google App Engine/version'.
+    ssl_setting = {'ca': 'server-ca.pem',
+                   'key': 'client-key.pem',
+                   'cert': 'client-cert.pem'}
     if os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine/'):
         # Connect using the unix socket located at
         # /cloudsql/cloudsql-connection-name.
@@ -45,7 +46,8 @@ def connect_to_cloudsql():
         db = MySQLdb.connect(
             unix_socket=cloudsql_unix_socket,
             user=CLOUDSQL_USER,
-            passwd=CLOUDSQL_PASSWORD)
+            passwd=CLOUDSQL_PASSWORD,
+            ssl=ssl_setting)
 
     # If the unix socket is unavailable, then try to connect using TCP. This
     # will work if you're running a local MySQL server or using the Cloud SQL
@@ -55,7 +57,8 @@ def connect_to_cloudsql():
     #
     else:
         db = MySQLdb.connect(
-            host='104.199.50.147', user=CLOUDSQL_USER, passwd=CLOUDSQL_PASSWORD)
+            host='104.199.50.147', user=CLOUDSQL_USER, passwd=CLOUDSQL_PASSWORD,
+            ssl=ssl_setting)
 
     return db
 
@@ -64,8 +67,6 @@ class MainPage(webapp2.RequestHandler):
     def get(self):
         """Simple request handler that shows all of the MySQL variables."""
         self.response.headers['Content-Type'] = 'text/plain'
-
-
         db = connect_to_cloudsql()
         cursor = db.cursor()
         cursor.execute('SHOW DATABASES')
